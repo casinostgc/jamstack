@@ -6,7 +6,7 @@
       <Nuxt />
     </v-main>
 
-    <!-- <SiteFooter /> -->
+    <SiteFooter />
   </v-app>
 </template>
 
