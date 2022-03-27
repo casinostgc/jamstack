@@ -1,5 +1,7 @@
 # casinostgc
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/05a02c5c-e750-4537-aa48-6a581547fad0/deploy-status)](https://app.netlify.com/sites/casinostgc/deploys)
+
 ## Build Setup
 
 ```bash
