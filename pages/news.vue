@@ -1,18 +1,22 @@
 <template>
-  <article>
-    <PageHeader :page="page" />
+  <main>
+    <PageHeader :page="page"> </PageHeader>
 
     <v-container class="my-5">
-      <nuxt-content :document="page" />
+      <SiteSidebarSlot>
+        <NuxtChild />
+      </SiteSidebarSlot>
     </v-container>
-  </article>
+  </main>
 </template>
 
 <script>
 export default {
+  name: 'News',
+
   async asyncData({ $content, error }) {
     try {
-      const page = await $content('home').fetch()
+      const page = await $content('news').fetch()
       return { page }
     } catch (e) {
       error({ message: e.message })
@@ -20,7 +24,7 @@ export default {
   },
 
   head: {
-    title: 'Home',
+    title: 'News',
   },
 }
 </script>

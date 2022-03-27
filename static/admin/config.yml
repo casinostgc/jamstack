@@ -1,0 +1,185 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: static/uploads
+public_folder: /uploads
+
+_pagefields: &PAGEFIELDS
+  - &TITLE { label: Title, name: title, widget: string }
+  - &SUBTITLE {
+      label: Subtitle,
+      name: subtitle,
+      widget: string,
+      required: false,
+    }
+  - &BODY { label: 'Body', name: 'body', widget: 'markdown' }
+  - &HEADERIMAGE {
+      label: 'Header Image',
+      name: 'image',
+      widget: 'image',
+      required: false,
+    }
+  - &HEADERCOLOR1 {
+      label: 'Header Color 1',
+      name: 'color1',
+      widget: 'color',
+      required: false,
+      enableAlpha: true,
+      allowInput: true,
+    }
+  - &HEADERCOLOR2 {
+      label: 'Header Color 2',
+      name: 'color2',
+      widget: 'color',
+      required: false,
+      enableAlpha: true,
+      allowInput: true,
+    }
+  - &GRADIENTANGLE {
+      label: 'Gradient Angle',
+      name: 'angle',
+      widget: 'number',
+      required: false,
+      default: 45,
+      min: 0,
+      max: 360,
+    }
+
+_postfields: &POSTFIELDS
+  - *TITLE
+  - *SUBTITLE
+  - *BODY
+
+collections:
+  - name: 'landing-pages'
+    label: 'Landing Pages'
+    files:
+      - label: 'Home'
+        name: 'home'
+        file: 'content/home.md'
+        fields: *PAGEFIELDS
+
+      - label: 'Flights'
+        name: 'flights'
+        file: 'content/flights_index.md'
+        fields:
+          - *TITLE
+          - *SUBTITLE
+          - *BODY
+          - label: 'Import Flights (CSV)'
+            name: 'csv'
+            widget: 'file'
+            choose_url: true
+            required: false
+            media_folder: '_flightscsv'
+          - *HEADERIMAGE
+          - *HEADERCOLOR1
+          - *HEADERCOLOR2
+          - *GRADIENTANGLE
+
+      - label: 'News'
+        name: 'news'
+        file: 'content/news.md'
+        fields: *PAGEFIELDS
+
+      # - label: 'Casinos'
+      #   name: 'casinos'
+      #   file: 'content/casinos_index.md'
+      #   fields: *PAGEFIELDS
+
+  - name: 'pages'
+    label: 'Pages'
+    folder: 'content/pages'
+    create: true
+    delete: true
+    fields: *PAGEFIELDS
+
+  - name: 'posts'
+    label: 'Posts'
+    folder: 'content/posts'
+    slug: '{{year}}-{{month}}-{{day}}-{{title}}'
+    create: true
+    delete: true
+    fields: *POSTFIELDS
+
+  # - name: 'casinos'
+  #   label: 'Casinos'
+  #   folder: 'content/casinos'
+  #   create: true
+  #   delete: true
+  #   fields:
+  #     - *TITLE
+  #     - label: 'Casino Code'
+  #       name: 'code'
+  #       widget: 'string'
+  #       required: true
+  #     - *SUBTITLE
+  #     - *BODY
+
+  # - name: 'testimonials'
+  #   label: 'Testimonials'
+  #   folder: 'content/testimonials'
+  #   slug: '{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}-{{name}}'
+  #   create: true
+  #   delete: true
+  #   fields:
+  #     - { label: Name, name: name, widget: string }
+  #     - { label: Trip, name: trip, widget: string }
+  #     - *BODY
+
+  - name: 'settings'
+    label: 'Settings'
+    files:
+      # Site Navigation
+      - label: 'Site Navigation'
+        name: 'navigation'
+        file: 'content/settings/navigation.md'
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Phone, name: phone, widget: number }
+          - { label: Button Text, name: button, widget: string }
+          - label: 'Navigation Items'
+            name: 'navigation'
+            widget: 'list'
+            label_singular: 'Item'
+            allow_add: true
+            collapsed: true
+            fields:
+              - { label: 'Name', name: 'name', widget: 'string' }
+              - { label: 'Link', name: 'link', widget: 'string' }
+              - {
+                  label: 'Icon',
+                  name: 'icon',
+                  widget: 'string',
+                  default: 'mdi-home',
+                  hint: 'https://materialdesignicons.com/',
+                }
+            # - { label: 'New Window', name: 'newwindow', widget: 'boolean', default: false }
+
+      # Sidebar
+      - label: 'Sidebr'
+        name: 'sidebar'
+        file: 'content/settings/sidebar.md'
+        fields:
+          - { label: 'Image', name: 'image', widget: 'image', required: false }
+          - *TITLE
+          - *BODY
+          - {
+              label: 'Button Link',
+              hint: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-href',
+              name: 'btn_link',
+              widget: 'string',
+              required: true,
+            }
+          - {
+              label: 'Button Text',
+              name: 'btn_text',
+              widget: 'string',
+              required: true,
+            }
+          - *HEADERCOLOR1
+          - *HEADERCOLOR2
+          - *GRADIENTANGLE
