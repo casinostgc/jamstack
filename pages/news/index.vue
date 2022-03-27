@@ -4,22 +4,34 @@
 
     <nuxt-content :document="page" />
 
-    <v-card>
+    <v-card class="mt-5">
       <v-list>
-        <v-list-item
-          v-for="(post, i) in posts"
-          :key="i"
-          :to="`/news/${post.slug}`"
-          router
-          exact
-        >
-          <v-list-item-content>
-            <v-list-item-title v-text="post.title" />
-            <v-list-item-subtitle
-              v-text="new Date(post.createdAt).toLocaleString()"
-            />
-          </v-list-item-content>
-        </v-list-item>
+        <template v-for="(post, i) in posts">
+          <v-divider v-if="i !== 0" inset :key="`divider-${i}`"></v-divider>
+          <v-list-item
+            :key="i"
+            :to="`/news/${post.slug}`"
+            three-line
+            router
+            exact
+          >
+            <v-list-item-avatar color="deep-purple lighten-1">
+              <v-icon dark> mdi-newspaper </v-icon>
+            </v-list-item-avatar>
+            <v-list-item-content>
+              <v-list-item-title v-text="post.title" />
+              <v-list-item-subtitle
+                v-text="new Date(post.createdAt).toLocaleString()"
+                class="text-caption"
+              />
+              <v-list-item-subtitle
+                v-if="post.subtitle"
+                v-text="post.subtitle"
+                class="mt-1"
+              />
+            </v-list-item-content>
+          </v-list-item>
+        </template>
       </v-list>
     </v-card>
   </article>
