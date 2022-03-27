@@ -44,7 +44,10 @@ export default {
   async asyncData({ $content, params, error }) {
     try {
       const page = await $content('news').fetch()
-      const posts = await $content('posts').without(['body']).fetch()
+      const posts = await $content('posts')
+        .sortBy('date', 'desc')
+        .without(['body'])
+        .fetch()
       return { page, posts }
     } catch (e) {
       error({ message: e.message })
