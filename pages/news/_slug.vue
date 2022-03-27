@@ -1,7 +1,7 @@
 <template>
   <article>
     <Breadcrumbs
-      :crumbs="[{ text: 'News', href: '/news' }, { text: post.title }]"
+      :crumbs="[{ text: 'News', to: '/news' }, { text: post.title }]"
     />
 
     <ArticleHeader :post="post" />

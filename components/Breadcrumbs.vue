@@ -1,5 +1,5 @@
 <template>
-  <v-breadcrumbs :items="items"></v-breadcrumbs>
+  <v-breadcrumbs :items="items" ex></v-breadcrumbs>
 </template>
 
 <script>
@@ -16,14 +16,17 @@ export default {
       let crumbs = [
         {
           text: 'Home',
-          href: '/',
+          to: '/',
         },
         ...this.crumbs,
       ]
 
       crumbs[crumbs.length - 1]['disabled'] = true
 
-      return crumbs
+      return crumbs.map((c) => {
+        c.exact = true
+        return c
+      })
     },
   },
 }

@@ -22,9 +22,9 @@
     </v-navigation-drawer>
 
     <v-app-bar clipped-right fixed app>
-      <a href="/" class="text-decoration-none black--text">
+      <NuxtLink to="/" class="text-decoration-none black--text">
         <v-toolbar-title v-html="title" />
-      </a>
+      </NuxtLink>
 
       <v-spacer />
 
