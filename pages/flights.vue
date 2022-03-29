@@ -57,9 +57,11 @@ export default {
     title: 'Flights',
   },
 
-  data: () => ({
-    search: '',
-  }),
+  data: function () {
+    return {
+      search: this.$route.query.q || '',
+    }
+  },
 
   computed: {
     headers() {
