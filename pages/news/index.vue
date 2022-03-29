@@ -45,7 +45,7 @@ export default {
     try {
       const page = await $content('news').fetch()
       const posts = await $content('posts')
-        .sortBy('date', 'desc')
+        .sortBy('createdAt', 'desc')
         .without(['body'])
         .fetch()
       return { page, posts }
