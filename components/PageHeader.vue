@@ -5,9 +5,9 @@
         {{ page.title }}
       </h1>
 
-      <h2 v-if="page.subtitle" class="font-weight-light">
+      <p v-if="page.subtitle" class="text-h5 font-weight-light">
         {{ page.subtitle }}
-      </h2>
+      </p>
     </v-container>
   </v-img>
 </template>
