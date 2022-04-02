@@ -7,13 +7,16 @@ navigation:
   - name: Home
     link: /
     icon: mdi-home
-  - name: News
+  - name: Latest Offers
     link: /news
     icon: mdi-newspaper
-  - name: Flights
+  - icon: mdi-poker-chip
+    name: Gaming Locations
+    link: /casinos
+  - name: Complimentary Airfare
     link: /flights
     icon: mdi-airplane
-  - name: About
+  - name: About Us
     link: /about
     icon: mdi-information
 ---

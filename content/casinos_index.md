@@ -1,6 +1,6 @@
 ---
 title: Casinos
 subtitle: “Very V.I.P” Gaming Locations
-image: https://www.casinostgc.com/assets/bg-roulette-1b061514384bf022156212bfb12afb8a90ffbee475750b721f9c6f55f4902d3c.jpg
+image: /uploads/photo-1515687652280-bf0bb698562a.jpeg
 ---
-Lorem
+The Grand Collection offers **“Very V.I.P”** Group Departures to these great Gaming Locations! We also arrange “Very V.I.P.” Customized Gaming Departures for your personally selected travel dates, as well as advice on where to gamble to receive the most casino comps.
