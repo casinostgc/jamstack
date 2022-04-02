@@ -1,7 +1,9 @@
 ---
 title: Casinos The Grand Collection
 subtitle: Exclusive Casino Offers & Custom Gambling Travel Itineraries That You
-  Won't Find Anywhere Else
+  Won't Find Anywhere Else!
+hero: very-vip
+show_hero: true
 image: /uploads/bimini_destination.jpeg
 color1: rgba(25,32,72,.7)
 color2: rgba(211, 136, 22, 0.7)

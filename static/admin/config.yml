@@ -15,7 +15,39 @@ _pagefields: &PAGEFIELDS
       widget: string,
       required: false,
     }
-  - &BODY { label: 'Body', name: 'body', widget: 'markdown' }
+  - &HERO {
+      label: 'Hero',
+      name: 'hero',
+      widget: 'relation',
+      collection: 'heroes',
+      search_fields: ['title'],
+      value_field: '{{slug}}',
+      display_fields: ['title'],
+    }
+  - &SHOWHERO {
+      label: 'Show Hero',
+      name: 'show_hero',
+      widget: 'boolean',
+      default: false,
+    }
+  - &BODY {
+      label: 'Body',
+      name: 'body',
+      widget: 'markdown',
+      buttons:
+        [
+          bold,
+          italic,
+          link,
+          heading-three,
+          heading-four,
+          heading-five,
+          heading-six,
+          quote,
+          bulleted-list,
+          numbered-list,
+        ],
+    }
   - &HEADERIMAGE {
       label: 'Header Image',
       name: 'image',
@@ -129,6 +161,19 @@ collections:
   #     - { label: Name, name: name, widget: string }
   #     - { label: Trip, name: trip, widget: string }
   #     - *BODY
+
+  - name: 'heroes'
+    label: 'Heroes'
+    folder: 'content/heroes'
+    create: true
+    delete: true
+    fields:
+      - *TITLE
+      - { label: Heading, name: heading, widget: string, required: true }
+      - *BODY
+      - *HEADERIMAGE
+      - *HEADERCOLOR1
+      - *GRADIENTANGLE
 
   - name: 'settings'
     label: 'Settings'
