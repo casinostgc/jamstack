@@ -105,19 +105,40 @@ collections:
     delete: true
     fields: *POSTFIELDS
 
-  # - name: 'casinos'
-  #   label: 'Casinos'
-  #   folder: 'content/casinos'
-  #   create: true
-  #   delete: true
-  #   fields:
-  #     - *TITLE
-  #     - label: 'Casino Code'
-  #       name: 'code'
-  #       widget: 'string'
-  #       required: true
-  #     - *SUBTITLE
-  #     - *BODY
+  - name: 'destinations'
+    label: 'Destinations'
+    folder: 'content/destinations'
+    create: true
+    delete: true
+    fields:
+      - *TITLE
+      - label: 'International'
+        name: 'international'
+        widget: 'boolean'
+        default: false
+      - *SUBTITLE
+      - *BODY
+
+  - name: 'casinos'
+    label: 'Casinos'
+    folder: 'content/casinos'
+    create: true
+    delete: true
+    fields:
+      - *TITLE
+      - label: 'Casino Code'
+        name: 'code'
+        widget: 'string'
+        required: true
+      - label: 'Destination'
+        name: 'destination'
+        widget: 'relation'
+        collection: 'destinations'
+        search_fields: ['title']
+        value_field: '{{slug}}'
+        display_fields: ['{{title}}']
+      - *SUBTITLE
+      - *BODY
 
   # - name: 'testimonials'
   #   label: 'Testimonials'
