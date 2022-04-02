@@ -85,10 +85,10 @@ collections:
         file: 'content/news.md'
         fields: *PAGEFIELDS
 
-      # - label: 'Casinos'
-      #   name: 'casinos'
-      #   file: 'content/casinos_index.md'
-      #   fields: *PAGEFIELDS
+      - label: 'Casinos'
+        name: 'casinos'
+        file: 'content/casinos_index.md'
+        fields: *PAGEFIELDS
 
   - name: 'pages'
     label: 'Pages'
