@@ -53,9 +53,5 @@ export default {
       error({ message: e.message })
     }
   },
-
-  head: {
-    title: 'News ',
-  },
 }
 </script>

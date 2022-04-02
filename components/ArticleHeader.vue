@@ -1,8 +1,8 @@
 <template>
   <header>
-    <h1 class="text-h4 mb-1">
+    <h2 class="text-h4 mb-1">
       {{ post.title }}
-    </h1>
+    </h2>
 
     <div class="text-caption mb-3">
       Posted {{ new Date(post.createdAt).toLocaleString() }}

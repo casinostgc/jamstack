@@ -3,9 +3,9 @@
     <PageHeader :page="page"> </PageHeader>
 
     <v-container class="my-5">
-      <SiteSidebarSlot>
-        <NuxtChild />
-      </SiteSidebarSlot>
+      <!-- <SiteSidebarSlot> -->
+      <NuxtChild />
+      <!-- </SiteSidebarSlot> -->
     </v-container>
   </main>
 </template>
