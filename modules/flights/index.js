@@ -12,16 +12,22 @@ export default function () {
     console.log('**************************')
 
     const flightsPage = await $content('flights_index').fetch()
+    let flights = []
 
     // saves CSV to JSON
     try {
       // get csv file
       const csv_slug = flightsPage.csv.match(/(.*)\.csv/)[1]
+
       const { body } = await $content(csv_slug).fetch()
+      flights = body?.map((x) => ({ ...x, slug: uuid() }))
 
       // map unique id to each row
-      const flights = body?.map((x) => ({ ...x, slug: uuid() })) || []
+    } catch (error) {
+      console.warn(`Unable to load flights csv`, error.message)
+    }
 
+    try {
       // write file
       fs.writeFileSync(
         path.join(contentDir, 'flights.json'),

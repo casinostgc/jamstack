@@ -1,5 +1,3 @@
-
-
 <template>
   <main>
     <PageHeader :page="page"> </PageHeader>
@@ -11,7 +9,14 @@
         <!-- <NuxtChild /> -->
         <nuxt-content :document="page" />
 
-        <v-card v-if="true">
+        <div
+          v-if="!flights.length"
+          class="text-center text-h4 font-weight-thin my-10"
+        >
+          No flights available at this time
+        </div>
+
+        <v-card v-else>
           <v-card-title>
             Flights
             <v-spacer></v-spacer>
@@ -42,7 +47,10 @@ export default {
   async asyncData({ $content, error }) {
     try {
       const page = await $content('flights_index').fetch()
-      const flights = await $content('flights').fetch()
+
+      const flights = await $content('flights')
+        .fetch()
+        .catch(() => [])
 
       return {
         page,

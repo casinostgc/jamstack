@@ -66,6 +66,9 @@ export default {
         },
       },
     ],
+
+    //
+    '~/modules/flights',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -85,9 +88,6 @@ export default {
       // Content module configuration: https://go.nuxtjs.dev/config-content
       {},
     ],
-
-    //
-    '~/modules/flights',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
