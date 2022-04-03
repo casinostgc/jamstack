@@ -2,7 +2,7 @@
 title: Flights by CTGC
 subtitle: Ask us about Complimentary Airfare, Hotel, and Transfers to the
   fabulous CAESARS Entertainment gaming resorts!
-csv: ""
+csv: _flightscsv/01-27-22-csv-website.csv
 image: /uploads/hanson-lu-dosvjditjrq-unsplash.jpg
 ---
 
