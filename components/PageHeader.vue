@@ -1,13 +1,13 @@
 <template>
   <v-img :src="page.image" :aspect-ratio="-1" :gradient="gradient" dark>
-    <v-container class="text-center my-15">
-      <h1 class="text-h2">
-        {{ page.title }}
-      </h1>
+    <v-container class="my-15">
+      <slot cl>
+        <div class="text-center">
+          <h1 class="text-h2">{{ page.title }}</h1>
 
-      <p v-if="page.subtitle" class="text-h5 font-weight-light">
-        {{ page.subtitle }}
-      </p>
+          <p v-if="page.subtitle" class="text-h5 font-weight-light">{{ page.subtitle }}</p>
+        </div>
+      </slot>
     </v-container>
   </v-img>
 </template>

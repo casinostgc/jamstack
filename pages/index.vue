@@ -1,6 +1,8 @@
 <template>
   <article>
-    <PageHeader :page="page" />
+    <PageHeader :page="page" class="text-center">
+      <Logo style="max-width: 600px;" alt="Casinos The Grand Collection, LLC" />
+    </PageHeader>
 
     <v-container class="my-5">
       <nuxt-content :document="page" />
