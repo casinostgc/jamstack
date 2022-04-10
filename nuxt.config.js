@@ -88,6 +88,8 @@ export default {
       // Content module configuration: https://go.nuxtjs.dev/config-content
       {},
     ],
+    // analytics
+    ['@nuxtjs/google-gtag', { id: 'G-DT714LXW96' }],
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
