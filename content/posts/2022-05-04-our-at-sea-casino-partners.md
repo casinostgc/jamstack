@@ -1,5 +1,5 @@
 ---
-title: Our "At Sea" Casino Partners
+title: Casinos The Grand Collection's Preferred "At Sea" Cruise Partners
 ---
 ![](/uploads/ctgc-preferred-cruise-partners.jpg)
 
