@@ -1,9 +1,13 @@
 ---
 title: Our Preferred "At Sea" Cruise Partners
 ---
+## Let Us Help With Your "At Sea" Gaming Holiday!
+
+
+
 ![](/uploads/ctgc-preferred-cruise-partners.jpg)
 
-## Let Us Help With Your "At Sea" Gaming Holiday!
+
 
 ##### Did you receive an offer from your favorite cruise line casino?  We can book those!
 
