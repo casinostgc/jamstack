@@ -4,9 +4,11 @@ subtitle: LIMITED SPACE LEFT! CALL TODAY!
 ---
 ![](/uploads/2022-05-24_14-02-43.png)
 
-### SET SAIL ON THE BRAND NEW [MSC SEASHORE](https://www.msccruisesusa.com/cruise/ships/msc-seashore)!
+### *SET SAIL ON THE BRAND NEW [MSC SEASHORE](https://www.msccruisesusa.com/cruise/ships/msc-seashore)!*
 
 ### Saturday, June 11, 2022 – Saturday, June 18, 2022
+
+**Round Trip from Miami, Florida**
 
 [Miami, Florida](https://www.msccruisesusa.com/destination/ports/MIA) ~ [At sea](https://www.msccruisesusa.com/on-board/entertainment) ~ [San Juan, Puerto Rico (overnight)](https://www.msccruisesusa.com/cruise/destinations/caribbean/puerto-rico/san-juan) ~
 
