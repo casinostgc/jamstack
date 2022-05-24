@@ -1,6 +1,6 @@
 ---
 title: Complimentary $75,000 Slot Tournament on MSC Seashore
-subtitle: LIMITED SPACE LEFT! CALL TODAY!
+subtitle: LIMITED SPACE LEFT! CALL OR EMAIL US TODAY!
 ---
 
 
