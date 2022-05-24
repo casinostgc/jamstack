@@ -2,6 +2,8 @@
 title: Complimentary $75,000 Slot Tournament on MSC Seashore
 subtitle: LIMITED SPACE LEFT! CALL TODAY!
 ---
+
+
 ![](/uploads/2022-05-24_14-02-43.png)
 
 ### *SET SAIL ON THE BRAND NEW [MSC SEASHORE](https://www.msccruisesusa.com/cruise/ships/msc-seashore)!*
