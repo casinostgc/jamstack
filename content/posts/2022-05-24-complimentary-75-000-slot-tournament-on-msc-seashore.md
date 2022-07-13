@@ -78,11 +78,11 @@ subtitle: LIMITED SPACE LEFT! CALL OR EMAIL US TODAY!
 
 \-----------------------------------------------------
 
-#### **7 NIGHT SAILING**
+**7 NIGHT SAILING**
 
-#### **SUNDAY - SUNDAY**
+**SUNDAY - SUNDAY**
 
-August 7, 2022- August 14, 2022 
+##### August 7, 2022- August 14, 2022 
 
 [Port Canaveral (Orlando), Florida](https://www.msccruisesusa.com/destination/ports/PCA) ~ [Ocean Cay MSC Marine Reserve, Bahamas (Overnight)](https://www.msccruisesusa.com/destination/ports/1SC) ~ [At Sea](https://www.msccruisesusa.com/on-board/entertainment) ~ [Costa Maya, Mexico](https://www.msccruisesusa.com/destination/ports/OAY) ~ [Cozumel, Mexico](https://www.msccruisesusa.com/destination/ports/CZM) ~ [At Sea](https://www.msccruisesusa.com/on-board/entertainment) ~ [Port Canaveral (Orlando), Florida](https://www.msccruisesusa.com/destination/ports/PCA)
 
