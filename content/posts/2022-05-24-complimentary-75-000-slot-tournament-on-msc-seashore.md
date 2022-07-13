@@ -16,11 +16,7 @@ subtitle: LIMITED SPACE LEFT! CALL OR EMAIL US TODAY!
 
 ##### **July 30, 2022- August 6, 2022**  
 
-[Port Miami (Miami), Florida](https://www.msccruisesusa.com/destination/ports/MIA) ~ [At Sea](https://www.msccruisesusa.com/on-board/entertainment) ~ [Ocho Rios, Jamaica](https://www.msccruisesusa.com/destination/ports/OCJ) ~ 
-
-[George Town, Cayman Islands](https://www.msccruisesusa.com/destination/ports/GCM) ~ [Cozumel, Mexico](https://www.msccruisesusa.com/destination/ports/CZM) ~ [At Sea](https://www.msccruisesusa.com/on-board/entertainment) ~ 
-
-[Ocean Cay MSC Marine Reserve, Bahamas](https://www.msccruisesusa.com/destination/ports/1SC) ~ [Port Miami (Miami), Florida](https://www.msccruisesusa.com/destination/ports/MIA)
+[Port Miami (Miami), Florida](https://www.msccruisesusa.com/destination/ports/MIA) ~ [At Sea](https://www.msccruisesusa.com/on-board/entertainment) ~ [Ocho Rios, Jamaica](https://www.msccruisesusa.com/destination/ports/OCJ) ~ [George Town, Cayman Islands](https://www.msccruisesusa.com/destination/ports/GCM) ~ [Cozumel, Mexico](https://www.msccruisesusa.com/destination/ports/CZM) ~ [At Sea](https://www.msccruisesusa.com/on-board/entertainment) ~ [Ocean Cay MSC Marine Reserve, Bahamas](https://www.msccruisesusa.com/destination/ports/1SC) ~ [Port Miami (Miami), Florida](https://www.msccruisesusa.com/destination/ports/MIA)
 
 \-----------------------------------------------------
 
@@ -52,9 +48,7 @@ subtitle: LIMITED SPACE LEFT! CALL OR EMAIL US TODAY!
 
 #####  **September 29, 2022- October 2, 2022** 
 
-[Port Canaveral (Orlando), Florida](https://www.msccruisesusa.com/destination/ports/PCA) ~ [Nassau, Bahamas](https://www.msccruisesusa.com/destination/ports/NAS) ~[Ocean Cay MSC Marine Reserve, Bahamas](https://www.msccruisesusa.com/destination/ports/1SC) ~ 
-
-[Port Canaveral (Orlando), Florida](https://www.msccruisesusa.com/destination/ports/PCA)
+[Port Canaveral (Orlando), Florida](https://www.msccruisesusa.com/destination/ports/PCA) ~ [Nassau, Bahamas](https://www.msccruisesusa.com/destination/ports/NAS) ~[Ocean Cay MSC Marine Reserve, Bahamas](https://www.msccruisesusa.com/destination/ports/1SC) ~ [Port Canaveral (Orlando), Florida](https://www.msccruisesusa.com/destination/ports/PCA)
 
 \-----------------------------------------------------
 
@@ -72,9 +66,7 @@ subtitle: LIMITED SPACE LEFT! CALL OR EMAIL US TODAY!
 
 ##### September 25, 2022- September 29, 2022
 
-[Port Canaveral (Orlando), Florida](https://www.msccruisesusa.com/destination/ports/PCA) ~ [Nassau, Bahamas](https://www.msccruisesusa.com/destination/ports/NAS) ~ [Ocean Cay MSC Marine Reserve, Bahamas (Overnight) ](https://www.msccruisesusa.com/destination/ports/1SC)
-
-~ [Port Canaveral (Orlando), Florida](https://www.msccruisesusa.com/destination/ports/PCA)
+[Port Canaveral (Orlando), Florida](https://www.msccruisesusa.com/destination/ports/PCA) ~ [Nassau, Bahamas](https://www.msccruisesusa.com/destination/ports/NAS) ~ [Ocean Cay MSC Marine Reserve, Bahamas (Overnight) ](https://www.msccruisesusa.com/destination/ports/1SC)~ [Port Canaveral (Orlando), Florida](https://www.msccruisesusa.com/destination/ports/PCA)
 
 \-----------------------------------------------------
 
