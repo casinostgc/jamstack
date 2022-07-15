@@ -2,9 +2,9 @@
 title: ALL Casino Players' COMPLIMENTARY CASINO CRUISES Are NOT Created Equal!!
 subtitle: LIMITED SPACE LEFT! CALL OR EMAIL US TODAY!
 ---
-![]()
-
 ![](/uploads/msc-zero-cost-staterooms-for-ctgc-website.jpg)
+
+![]()
 
 ![](/uploads/msc-seashore-departing-from-miami.png)
 
