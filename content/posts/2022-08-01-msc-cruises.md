@@ -1,6 +1,6 @@
 ---
 title: MSC CRUISES
-subtitle: ALL Casino Players' COMPLIMENTARY CASINO CRUISES Are NOT Created Equal!!
+subtitle: Our Newest "At Sea" Preferred Marketing Partner
 ---
 ![](/uploads/ctgc-and-msc.jpg)
 
