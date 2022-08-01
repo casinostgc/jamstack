@@ -2,9 +2,9 @@
 title: MSC CRUISES
 subtitle: ALL Casino Players' COMPLIMENTARY CASINO CRUISES Are NOT Created Equal!!
 ---
-<!--StartFragment-->
-
 ![](/uploads/ctgc-and-msc.jpg)
+
+<!--StartFragment-->
 
 CASINOS THE GRAND COLLECTION has a longstanding relationship with the newest Casino Management team at MSC Cruises.  We are well positioned to offer you the most in complimentary benefits for your "At Sea" gaming holidays onboard MSC's luxurious ships.
 
