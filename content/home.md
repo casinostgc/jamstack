@@ -7,7 +7,6 @@ color1: rgba(25,32,72,.7)
 color2: rgba(135, 85, 9, 0.7)
 angle: 45
 ---
-
 **CASINOS the Grand Collection** may very well be the most prominent independent supplier of exclusive [casino offers](/news) and customized gambling travel itineraries to the world's most experienced gamblers. We connect our clients to the **best casino offers, complimentary privileges, benefits & services** at [gaming destinations](/casinos) across the United States and internationally.
 
 Our long-term experience in this industry has created a worldwide network of gaming resorts and cruise lines. Working with our partners, we offer our clients an incredible selection of complimentary trips, amenities, and invitations to top-tier special events.
@@ -18,7 +17,7 @@ Take advantage of the wonderful opportunities that we can provide to create a me
 
 ### The Grand Collection of "On Land" Casinos
 
-The Grand Collection offers “Very V.I.P” Group Departures to great [Gaming Locations](/casinos) including: Las Vegas, Atlantic City, New Orleans, Tunica, Reno, Lake Tahoe, Dominican Republic, Windsor, Biloxi etc. We also arrange “Very V.I.P.” Customized Gaming Departures for your personally selected travel dates, as well as advice on where to gamble to receive the most casino comps.
+The Grand Collection offers “Very V.I.P” Group Departures to great [Gaming Locations](/casinos) including: Las Vegas, Atlantic City, New Orleans, Tunica, Reno, Lake Tahoe, Biloxi etc. We also arrange “Very V.I.P.” Customized Gaming Departures for your personally selected travel dates, as well as advice on where to gamble to receive the most casino comps.
 
 ### The Grand Collection of Cruise Experience & Gaming "At Sea"
 
