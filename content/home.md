@@ -7,7 +7,7 @@ color1: rgba(25,32,72,.7)
 color2: rgba(135, 85, 9, 0.7)
 angle: 45
 ---
-**Casinos The Grand Collection** is one of the most prominent independent supplier of exclusive [casino offers](/news) and customized gambling travel itineraries to the world's most experienced gamblers. We connect our clients to the **best casino offers, complimentary privileges, benefits & services** at [gaming destinations](/casinos) across the United States and internationally.
+**Casinos The Grand Collection** is one of the most prominent independent suppliers of exclusive [casino offers](/news) and customized gambling travel itineraries to the world's most experienced gamblers. We connect our clients to the **best casino offers, complimentary privileges, benefits & services** at [gaming destinations](/casinos) across the United States and internationally.
 
 Our long-term experience in this industry has created a worldwide network of gaming resorts and cruise lines. Working with our partners, we offer our clients an incredible selection of complimentary trips, amenities, and invitations to top-tier special events.
 
