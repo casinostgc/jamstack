@@ -1,15 +1,9 @@
 ---
 title: About Casinos the Grand Collection
 leadIn: A lead in
-subtitle: All of our scheduled departures are escorted by at least one staff
-  member, who is available on a 24-hour basis for truly superior personalized
-  service. All of our group departures are designed and available for casino
-  players at all levels of play. In some cases, you may prefer to drive in and
-  join us!!
+subtitle: ""
 image: /uploads/colin-lloyd-4zj6201apts-unsplash.jpg
 ---
-Some of our casino partners include [prepaid air transportation](/flights) as a part of the complimentary privileges we are allowed to extend to you in advance. In those cases where air transportation is not included, if you wish, our travel agency partner will arrange your reservation without the traditional service fee from your preferred departure point.
-
 ### Rick Diaz
 
 Rick Diaz’s vast knowledge in the gaming industry goes back to 1979 when his association with legendary Caesars World, Inc. (now Caesars Entertainment, Inc.) began. This relationship spanned over 20 years and, as an executive director of casino marketing for Caesars World, Rick developed numerous friendships with customers and executives in the gaming industry.
