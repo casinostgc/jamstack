@@ -17,8 +17,8 @@ Take advantage of the wonderful opportunities that we can provide to create a me
 
 ### The Grand Collection of "On Land" Casinos
 
-The Grand Collection offers “Very V.I.P” Group Departures to great [Gaming Locations](/casinos) including: Las Vegas, Atlantic City, New Orleans, Tunica, Reno, Lake Tahoe, Biloxi etc. We also arrange “Very V.I.P.” Customized Gaming Departures for your personally selected travel dates, as well as advice on where to gamble to receive the most casino comps.
+**Casinos The Grand Collection** offers “Very V.I.P” Customized Gaming Departures for your personally selected travel dates to great [Gaming Locations](/casinos) including: Las Vegas, Atlantic City, New Orleans, Tunica, Reno, Lake Tahoe, Biloxi etc. 
 
 ### The Grand Collection of Cruise Experience & Gaming "At Sea"
 
-“Very V.I.P.” Group Departures to exotic destinations such as: Hawaii, Alaska, Canada, New England, Mexico, Panama Canal, Bahamas, the Caribbean, South America, Europe, Asia and more! Additionally we arrange “Very V.I.P.” Sailings for your personally selected travel dates.
+**Casinos The Grand Collection** is here to help with “Very V.I.P.” sailings for your personally selected travel dates to cruise destinations such as: Hawaii, Alaska, Canada, New England, Mexico, Panama Canal, Bahamas, the Caribbean, South America, Europe, Asia and more!
