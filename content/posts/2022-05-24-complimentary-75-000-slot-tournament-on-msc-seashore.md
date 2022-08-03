@@ -14,12 +14,6 @@ subtitle: LIMITED SPACE LEFT! CALL OR EMAIL US TODAY!
 
 #### **SATURDAY - SATURDAY** 
 
-##### **July 30, 2022- August 6, 2022**  
-
-[Port Miami (Miami), Florida](https://www.msccruisesusa.com/destination/ports/MIA) ~ [At Sea](https://www.msccruisesusa.com/on-board/entertainment) ~ [Ocho Rios, Jamaica](https://www.msccruisesusa.com/destination/ports/OCJ) ~ [George Town, Cayman Islands](https://www.msccruisesusa.com/destination/ports/GCM) ~ [Cozumel, Mexico](https://www.msccruisesusa.com/destination/ports/CZM) ~ [At Sea](https://www.msccruisesusa.com/on-board/entertainment) ~ [Ocean Cay MSC Marine Reserve, Bahamas](https://www.msccruisesusa.com/destination/ports/1SC) ~ [Port Miami (Miami), Florida](https://www.msccruisesusa.com/destination/ports/MIA)
-
-\-----------------------------------------------------
-
 ##### **August 6, 2022- August 13, 2022**
 
 ##### **August 20, 2022- August 27, 2022**
@@ -36,10 +30,6 @@ subtitle: LIMITED SPACE LEFT! CALL OR EMAIL US TODAY!
 
 #### **THURSDAY - SUNDAY**
 
-#####  **July 21, 2022- July 24, 2022**
-
-#####  **August 4, 2022- August 8, 2022**
-
 #####  **August 18, 2022- August 22, 2022**
 
 #####  **September 1, 2022- September 4, 2022**
@@ -55,8 +45,6 @@ subtitle: LIMITED SPACE LEFT! CALL OR EMAIL US TODAY!
 #### **4 NIGHT SAILINGS**
 
 #### **SUNDAY - THURSDAY**
-
-##### July 31, 2022- August 4, 2022
 
 ##### August 14, 2022- August 18, 2022
 
