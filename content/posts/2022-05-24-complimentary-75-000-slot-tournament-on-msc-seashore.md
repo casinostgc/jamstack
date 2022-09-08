@@ -8,8 +8,6 @@ subtitle: LIMITED SPACE LEFT! CALL OR EMAIL US TODAY!
 
 ![]()
 
-
-
 ![](/uploads/msc-divina-banner.png)
 
 <!--StartFragment-->
@@ -17,8 +15,6 @@ subtitle: LIMITED SPACE LEFT! CALL OR EMAIL US TODAY!
 #### **3 NIGHT SAILINGS**
 
 #### **THURSDAY - SUNDAY**
-
-#####  **September 1, 2022- September 4, 2022**
 
 #####  **September 15, 2022- September 18, 2022** 
 
