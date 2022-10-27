@@ -10,11 +10,11 @@ CALL OR [EMAIL](info@casinostgc.com) US TODAY!
 
 ![](/uploads/msc-divina-banner.jpg)
 
-![](/uploads/2022-10-21-msc-divina-departing-from-orlando-and-miami.png)
+![]()
 
 ![](/uploads/msc-meraviglia-banner.jpg)
 
-![](/uploads/2022-10-21-msc-meraviglia-departing-from-orlando.png)
+![]()
 
 ![]()
 
