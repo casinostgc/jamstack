@@ -8,11 +8,11 @@ subtitle: LIMITED SPACE LEFT! CALL OR EMAIL US TODAY!
 
 ![](/uploads/msc-divina-banner.jpg)
 
-![](/uploads/msc-divina-departing-from-orlando-and-miami.png)
+![](/uploads/2022-10-21-msc-divina-departing-from-orlando-and-miami.png)
 
 ![](/uploads/msc-meraviglia-banner.jpg)
 
-![](/uploads/msc-meraviglia-departing-from-orlando.png)
+![](/uploads/2022-10-21-msc-meraviglia-departing-from-orlando.png)
 
 ![]()
 
