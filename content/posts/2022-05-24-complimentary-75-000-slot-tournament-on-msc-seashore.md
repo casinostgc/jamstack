@@ -2,7 +2,7 @@
 title: ALL Casino Players' COMPLIMENTARY CASINO CRUISES Are NOT Created Equal!!
 subtitle: LIMITED SPACE - DON'T DELAY!
 ---
-CALL OR [EMAIL](info@casinostgc.com) US TODAY!
+CALL OR [EMAIL](info@casinostgc.com) US TODAY!!
 
 ![]()
 
