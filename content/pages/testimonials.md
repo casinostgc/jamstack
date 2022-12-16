@@ -2,6 +2,10 @@
 title: Testimonials
 angle: 45
 ---
-Mary Ann from Ohio
+Helen from Canada
 
-Casinos The Grand Collection is the best!
+H﻿orseshoe Las Vegas - February 2023
+
+Hi Terri and Rick,
+
+T﻿hank you sooooo much for your work on this.  As always, exceptional service. It will be a great birthday celebration for sure.
