@@ -2,7 +2,7 @@
 title: ROYAL CARIBBEAN CASINO ROYALE COMPLIMENTARY SAILINGS
 subtitle: Inventory is limited. Call or email us today.
 ---
-### C﻿OMPLIMENTARY STATEROOM\*\* FOR YOU AND YOUR GUEST. 
+### C﻿OMPLIMENTARY STATEROOM\*\* FOR YOU AND YOUR GUEST.
 
 ### Y﻿our *only* cost is for taxes, fees and port expenses.
 
@@ -10,7 +10,7 @@ subtitle: Inventory is limited. Call or email us today.
 
 ![](/uploads/ctgc-preferred-partner-royal-caribbean.jpg)
 
-![](/uploads/2023-01-04-rccl-casino-free-1.jpg)
+![](/uploads/2023-01-04-rccl-casino-free-1-ver-2-.jpg)
 
 ![](/uploads/2023-01-04-rccl-casino-free-2.jpg)
 
