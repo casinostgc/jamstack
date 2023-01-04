@@ -2,15 +2,11 @@
 title: MSC CRUISES SLOT TOURNAMENTS
 subtitle: LIMITED SPACE - DON'T DELAY!
 ---
-### **CALL OR [EMAIL](info@casinostgc.com) US TODAY!!  866-818-COIN (2646) | [info@casinostgc.com](info@casinostgc.com)**
+### **CALL OR EMAIL US TODAY!!  866-818-COIN (2646) | info@casinostgc.com**
 
 ![](/uploads/msc-call-to-action-2.jpg)
 
-
-
 ![](/uploads/msc-slot-tournaments-events.jpg)
-
-
 
 ![](/uploads/msc-seascape-tournaments.jpg)
 
