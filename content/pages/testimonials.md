@@ -1,6 +1,9 @@
 ---
 title: Testimonials
 angle: 45
+leadIn: 
+subtitle: ""
+image: /uploads/colin-lloyd-4zj6201apts-unsplash.jpg
 ---
 ## Helen from Canada
 
