@@ -16,6 +16,9 @@ navigation:
   - name: Complimentary Airfare
     link: /flights
     icon: mdi-airplane
+  - name: Testimonials
+    link: /testimonials
+    icon: mdi-message-text
   - name: About Us
     link: /about
     icon: mdi-information
