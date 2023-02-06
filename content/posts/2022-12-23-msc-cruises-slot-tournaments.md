@@ -8,11 +8,11 @@ subtitle: LIMITED SPACE - DON'T DELAY!
 
 ![](/uploads/msc-slot-tournaments-events.jpg)
 
-![](/uploads/msc-seascape-tournaments.jpg)
+![](/uploads/2023-02-06-seascape-tournaments.jpg)
 
 ![](/uploads/msc-meraviglia-from-pc-tournaments.jpg)
 
-![](/uploads/msc-meraviglia-from-nyc-tournaments.jpg)
+![](/uploads/2023-02-06-meraviglia-departing-nyc-slot-tournaments.jpg)
 
 ![]()
 
