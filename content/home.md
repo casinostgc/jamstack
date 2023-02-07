@@ -15,7 +15,7 @@ Our long-term experience in this industry has created a worldwide network of gam
 
 Take advantage of the wonderful opportunities that we can provide to create a memorable gaming holiday, celebrate an extended weekend, or just relax on a getaway to one of our exciting destinations or onboard some of the world's most luxurious cruise liners.
 
-C﻿heck out what our customers have to say about our service assisting with their upcoming gaming holidays on our [testimonial](https://www.casinostgc.com/testimonials) page!!
+C﻿heck out what our customers have to say about our services assisting with their upcoming gaming holidays on our [testimonial](https://www.casinostgc.com/testimonials) page!!
 
 ![](/uploads/banner-home-199e358dff13760b46a31f1e19cd0d774fc2d578c8c9565fcd212127370a3875.jpg)
 
