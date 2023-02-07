@@ -30,3 +30,11 @@ T﻿hanks for everthing!  We did not know about the free play on this cruise!
 **R﻿oyal Caribbean - Allure of the Seas - May 2023**
 
 T﻿hank you, Terri!  Appreciate all your continued help.
+
+
+
+## Daryl and Chris from Arizona
+
+**R﻿oyal Caribbean - Allure of the Seas - October 2023**
+
+You are the bestest!!!!!
