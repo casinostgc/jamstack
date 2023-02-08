@@ -9,13 +9,13 @@ angle: 45
 ---
 **Casinos The Grand Collection** is one of the most prominent independent suppliers of exclusive [casino offers](/news) and customized gambling travel itineraries to the world's most experienced gamblers. We connect our clients to the **best casino offers, complimentary privileges, benefits & services** at [gaming destinations](/casinos) across the United States and internationally.
 
-We have reserved seats on hundreds of [flights](https://www.casinostgc.com/flights/) from dozens of cities across the United States and Canada, including one near you. Reservations being accepted for qualified players.
+We have seats on hundreds of [flights](https://www.casinostgc.com/flights/) from dozens of cities across the United States and Canada, including one near you. Reservations being accepted for qualified players.
 
 Our long-term experience in this industry has created a worldwide network of gaming resorts and cruise lines. Working with our partners, we offer our clients an incredible selection of complimentary trips, amenities, and invitations to top-tier special events.
 
 Take advantage of the wonderful opportunities that we can provide to create a memorable gaming holiday, celebrate an extended weekend, or just relax on a getaway to one of our exciting destinations or onboard some of the world's most luxurious cruise liners.
 
-C﻿heck out what our customers have to say about our services assisting with their upcoming gaming holidays on our [testimonial](https://www.casinostgc.com/testimonials) page!!
+Check out what our customers have to say about our services assisting with their upcoming gaming holidays on our [testimonial](https://www.casinostgc.com/testimonials) page!!
 
 ![](/uploads/banner-home-199e358dff13760b46a31f1e19cd0d774fc2d578c8c9565fcd212127370a3875.jpg)
 
