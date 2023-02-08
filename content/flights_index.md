@@ -5,4 +5,4 @@ subtitle: Ask us about Complimentary Airfare, Hotel, and Transfers to several
 csv: _flightscsv/01-20-23-flights-csv-with-resorts-added.csv
 image: /uploads/hanson-lu-dosvjditjrq-unsplash.jpg
 ---
-We have reserved seats on hundreds of flights from dozens of cities across the United States and Canada, including one near you. Reservations being accepted for qualified players.
+We have seats on hundreds of flights from dozens of cities across the United States and Canada, including one near you. Reservations being accepted for qualified players.
