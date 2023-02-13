@@ -31,10 +31,18 @@ T﻿hanks for everthing!  We did not know about the free play on this cruise!
 
 T﻿hank you, Terri!  Appreciate all your continued help.
 
-
-
 ## Daryl and Chris from Arizona
 
 **R﻿oyal Caribbean - Allure of the Seas - October 2023**
 
 You are the bestest!!!!!
+
+
+
+## MaryAnn and Brent from Ohio
+
+**Celebrity Millennium - April 2023**
+
+Incredible!!!  And that ship is empty!  We love that!
+
+Thanks, Missy (Terri). You’re the BEST!
