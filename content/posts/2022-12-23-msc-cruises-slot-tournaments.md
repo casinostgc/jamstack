@@ -4,15 +4,15 @@ subtitle: LIMITED SPACE - DON'T DELAY!
 ---
 ### **CALL OR EMAIL US TODAY!!  866-818-COIN (2646) | info@casinostgc.com**
 
-![](/uploads/msc-call-to-action-2.jpg)
+![](/uploads/msc-call-to-action-small-scale.jpg)
 
-![](/uploads/msc-slot-tournaments-events.jpg)
+![](/uploads/2023-msc-slot-tournaments-and-events-with-text.jpg)
 
-![](/uploads/2023-02-06-seascape-tournaments.jpg)
+![](/uploads/2023-02-15-msc-seascape-tournaments.jpg)
 
-![](/uploads/msc-meraviglia-from-pc-tournaments.jpg)
+![](/uploads/2023-02-15-msc-meraviglia-pcn-tournaments.jpg)
 
-![](/uploads/2023-02-06-meraviglia-departing-nyc-slot-tournaments.jpg)
+![](/uploads/2023-02-15-msc-meraviglia-nyc-tournaments.jpg)
 
 ![]()
 
