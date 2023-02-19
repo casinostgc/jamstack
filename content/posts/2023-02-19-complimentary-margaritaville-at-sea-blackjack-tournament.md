@@ -1,6 +1,6 @@
 ---
 title: COMPLIMENTARY MARGARITAVILLE AT SEA BLACKJACK TOURNAMENT
-subtitle: Our Newest "At Sea" Preferred Marketing Partner
+subtitle: Call or Email Today 866-818-COIN(2646) | info@casinostgc.com
 ---
 ![](/uploads/2023-ctgc-preferred-partner-mvs-2.jpg)
 
