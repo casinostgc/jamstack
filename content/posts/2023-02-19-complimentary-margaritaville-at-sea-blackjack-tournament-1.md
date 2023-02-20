@@ -4,7 +4,7 @@ subtitle: ""
 ---
 <!--StartFragment-->
 
-**CASINOS THE GRAND COLLECTION** is proud to introduce our newest "At Sea" Preferred Marketing Partner **Margaritaville at Sea sailing from the Port of Palm Beach, Florida**.
+**CASINOS THE GRAND COLLECTION** is proud to introduce our newest "At Sea" Preferred Marketing Partner **Margaritaville at Sea** sailing from the Port of Palm Beach, Florida.
 
 W﻿hat better way to get acquainted with them than this fun complimentary Blackjack Tournament!!
 
