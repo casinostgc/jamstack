@@ -1,22 +1,24 @@
 ---
 title: ALL Casino Players' COMPLIMENTARY CASINO CRUISES Are NOT Created Equal!!
-subtitle: LIMITED SPACE - DON'T DELAY!
+subtitle: ""
 ---
-CALL OR [EMAIL](info@casinostgc.com) US TODAY!!
+CALL OR EMAIL US TODAY!! 866-818-COIN (2646) | [info@casinostgc.com](info@casinostgc.com)
+
+W﻿ith sailings from Orlando (Port Canaveral), Miami and New York there is sure to be one for you!  
+
+![](/uploads/msc-call-to-action-casino-free-cruises.jpg)
+
+![](/uploads/msc-casino-free-as-of-02-23-23.png)
 
 ![]()
 
-![](/uploads/2022-10-03_11-59-22.jpg)
-
-![](/uploads/msc-divina-banner.jpg)
-
-![](/uploads/2022-10-27_16-25-32.jpg)
+![]()
 
 ![]()
 
-![](/uploads/msc-meraviglia-banner.jpg)
+![]()
 
-![](/uploads/2022-10-27_16-27-33.jpg)
+![]()
 
 ![]()
 
