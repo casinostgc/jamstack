@@ -1,6 +1,6 @@
 ---
-title: Complimentary MSC Cruises from Orlando, Miami and New York - Yours For
-  The Taking!
+title: COMPLIMENTARY MSC CRUISES FROM ORLAND, MIAMI AND NEW YOUR - YOURS FOR THE
+  TAKING!!
 subtitle: ALL Casino Players' COMPLIMENTARY CASINO CRUISES Are NOT Created Equal!!
 ---
 <!--StartFragment-->
