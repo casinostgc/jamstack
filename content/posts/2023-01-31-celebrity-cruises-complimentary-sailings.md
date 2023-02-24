@@ -10,7 +10,7 @@ subtitle: Inventory is limited. Call or email us today.
 
 ![](/uploads/ctgc-celebrity-preferred-partner.jpg)
 
-![](/uploads/casino-deals-pg-1-2-.jpg)
+![]()
 
 ![](/uploads/casino-deals-pg-2.jpg)
 
