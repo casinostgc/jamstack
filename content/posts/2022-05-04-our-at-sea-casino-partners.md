@@ -1,9 +1,16 @@
 ---
-title: Our Preferred "At Sea" Cruise Partners
+title: OUR PREFERRED "AT SEA" CASINO PARTNERS
+subtitle: ""
 ---
 ## Let Us Help With Your "At Sea" Gaming Holiday!
 
-![](/uploads/2022-cruise-preferred-partners.jpg)
+<!--StartFragment-->
+
+CALL OR EMAIL US TODAY!! 866-818-COIN (2646) | [info@casinostgc.com](info@casinostgc.com)
+
+<!--EndFragment-->
+
+![](/uploads/2023-ctgc-at-sea-preferred-partners.jpg)
 
 ### Did you receive an offer from your favorite cruise line casino?  We can book those!
 
