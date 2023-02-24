@@ -1,5 +1,7 @@
 ---
-title: ALL Casino Players' COMPLIMENTARY CASINO CRUISES Are NOT Created Equal!!
+title: Complimentary MSC Cruises from Orlando, Miami and New York - Yours For
+  The Taking!
+subtitle: ALL Casino Players' COMPLIMENTARY CASINO CRUISES Are NOT Created Equal!!
 ---
 <!--StartFragment-->
 
