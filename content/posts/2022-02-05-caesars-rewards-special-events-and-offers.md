@@ -1,8 +1,14 @@
 ---
-title: Caesars Rewards Special Events and Offers
+title: CAESARS REWARDS SPECIAL EVENTS AND OFFERS
 subtitle: If you receive an invitation to a Special Event or a Casino Offer from
   any Caesars Rewards Resort/Casino we can help!
 ---
+<!--StartFragment-->
+
+CALL OR EMAIL US TODAY!! 866-818-COIN (2646) | [info@casinostgc.com](info@casinostgc.com)
+
+<!--EndFragment-->
+
 Caesars Entertainment operates more than 50 resorts and casinos across the United States.  Choose your dream destination today!
 
 ![](/uploads/2022-cet-property-collage.jpg)
