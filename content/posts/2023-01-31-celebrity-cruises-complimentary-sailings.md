@@ -1,5 +1,5 @@
 ---
-title: CELEBRITY CRUISES COMPLIMENTARY SAILINGS
+title: COMPLIMENTARY CELEBRITY CRUISES
 subtitle: Inventory is limited. Call or email us today.
 ---
 ### C﻿OMPLIMENTARY STATEROOM\*\* FOR YOU AND YOUR GUEST.
