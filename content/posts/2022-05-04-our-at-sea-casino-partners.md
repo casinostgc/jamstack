@@ -1,6 +1,7 @@
 ---
 title: OUR PREFERRED "AT SEA" CASINO PARTNERS
-subtitle: ""
+subtitle: HAVE A OFFER FROM OUR "AT SEA" PARTNERS?  LET US HELP YOU WITH YOUR
+  RESERVATIONS!
 ---
 ## Let Us Help With Your "At Sea" Gaming Holiday!
 
