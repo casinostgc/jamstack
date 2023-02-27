@@ -10,6 +10,10 @@ W﻿hat better way to get acquainted with Margaritaville at Sea than with this f
 
 Y﻿our only costs are for gratuities, taxes, fees, port expenses and fuel charges in the amount of $148.30 per person.
 
+Other fun things included with this event:  A pub crawl with prizes, green alcoholic beverages, and a themed musical event in the theatre for St Patrick’s Day!
+
+**M﻿argaritaville at Sea** is also rolling out an even better menu at Fin's main dining room, featuring "Jimmy's Shrimp Gumbo".
+
 CALL OR EMAIL US TODAY!!  866-818-COIN (2646) | [info@casinostgc.com](info@casinostgc.com)
 
 <!--EndFragment-->
