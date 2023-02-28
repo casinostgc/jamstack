@@ -37,8 +37,6 @@ T﻿hank you, Terri!  Appreciate all your continued help.
 
 You are the bestest!!!!!
 
-
-
 ## MaryAnn and Brent from Ohio
 
 **Celebrity Millennium - April 2023**
@@ -46,3 +44,11 @@ You are the bestest!!!!!
 Incredible!!!  And that ship is empty!  We love that!
 
 Thanks, Missy (Terri). You’re the BEST!
+
+
+
+## L﻿atifa from Florida
+
+**Celebrity Beyond - March 2024**
+
+Hello Terri. Thank you so much, you are so kind to me, I appreciate you very much. Have a beautiful day Terri
