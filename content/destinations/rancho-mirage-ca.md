@@ -1,7 +1,0 @@
----
-title: "Rancho Mirage, California"
-international: false
----
-
-Rancho Mirage offers the perfect place to enjoy nearby Palm Springs, Palm Desert and Cathedral City, but it’s also a fabulous destination in its own right. With four golf courses in Rancho Mirage, not counting the surrounding areas, we guarantee you’ll find something you like. Like the late Bob Hope in days gone by, you’ll love teeing up among the palms! Rancho Las Palmas Country Club and Spa features three nine-hole courses designed by Ted Robinson. The Rancho Mirage Country Club has a PGA clubhouse, views of the San Jacinto Mountains as well as first-class driving ranges and practice facilities. Or put your clubs at the condo for the day and attend one of the many pro-golf tournaments in the area, including the Kraft Nabisco Championship in May. Rancho Mirage welcomes families in a big way! You and your children can explore the abundance of activities for all ages. Try the Children’s Discovery Museum of the Desert or Joshua Tree National Park. At the Living Desert Zoo and Botanical Gardens, get up close and personal with desert animals from North America and Africa of every shape and size. Book a tour or explore the grounds on your own time table. Ride a camel, see an eagle and pet a turtle.
-  
