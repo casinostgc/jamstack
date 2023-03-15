@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { Casino } from '~~/types/contentful'
+import { Casino, Page } from '~~/types/contentful'
+
+const page = inject<Ref<Page>>('page')
 
 const { path } = useRoute()
 const { data } = await useFetch<{
@@ -12,8 +14,8 @@ const related = computed(() => data.value?.related)
 
 useBreadcrumbs([
   {
-    title: 'Casinos',
-    href: '/casinos',
+    title: page?.value?.navigationTitle ?? page?.value?.title!,
+    href: page?.value.slug!,
   },
   {
     title: casino.value?.title!,

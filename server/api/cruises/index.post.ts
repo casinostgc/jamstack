@@ -18,53 +18,42 @@ export default defineEventHandler(async (event) => {
     query {
       settingsCollection(limit: 1, order: sys_publishedAt_DESC) {
         items {
-          flights {
+          cruises {
             url
           }
         }
       }
-
-      casinoCollection {
-        items {
-          ...CasinoFragment
-        }
-      }
     }
-
-    ${CasinoFragment}
   `
 
-  const { settingsCollection, casinoCollection } = await graphql({
+  const { settingsCollection } = await graphql({
     query,
   })
 
   const { data: csvData } = await axios.get(
-    settingsCollection?.items?.[0]?.flights?.url!
+    settingsCollection?.items?.[0]?.cruises?.url!
   )
 
-  const flights = await csv({
+  const cruises = await csv({
     //   noheader: true,
     //   output: 'csv',
   }).fromString(csvData)
 
-  const altered = flights.map((x) => {
-    const casino = casinoCollection?.items?.find(
-      (c) => c?.airportCode === x.casinocode
-    )
-
+  const altered = cruises.map((x) => {
     return {
       ...x,
-      _departingat: DateTime.fromFormat(x.departingat, 'MM/dd/yy').valueOf(),
-      _arrivingat: DateTime.fromFormat(x.arrivingat, 'MM/dd/yy').valueOf(),
-      casinoPath: casino?.slug,
-      casinoName: casino?.title,
+      _embarkation_date: DateTime.fromFormat(
+        x.embarkation_date,
+        'yyyy-MM-dd'
+      ).valueOf(),
+      round_trip: x.arrival_port !== x.departure_port,
     }
   })
 
-  // return altered
+  //   return altered
 
   const res = await algoliaClient
-    .initIndex('Flights')
+    .initIndex('Cruises')
     .replaceAllObjects(altered, {
       autoGenerateObjectIDIfNotExist: true,
     })

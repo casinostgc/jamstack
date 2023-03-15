@@ -16,7 +16,7 @@ const props = defineProps<{
 
 const configure = ref({
   filters: [
-    `_departingat > ${new Date().valueOf()}`,
+    `_embarkation_date > ${new Date().valueOf()}`,
     ...(props.filters ?? []),
   ].join(' AND '),
 })
@@ -42,24 +42,23 @@ const configure = ref({
         <v-table>
           <thead>
             <tr>
+              <th>Description</th>
               <th colspan="2">Departs From</th>
-              <th>Resort</th>
               <th v-if="$zoho"></th>
             </tr>
           </thead>
           <tbody class="text-body-2 text-capitalize">
             <tr v-for="item in items" :key="item.objectID">
               <td>
-                {{ item.departingairport }}
+                {{ item.description.toLowerCase() }}
               </td>
               <td>
-                {{ item.departingat }}
+                {{ item.departure_port.toLowerCase() }}
               </td>
               <td>
-                <a :href="item.casinoPath">
-                  {{ item.casinoName ?? item.gamingresort }}
-                </a>
+                {{ new Date(item._embarkation_date).toLocaleDateString() }}
               </td>
+
               <td v-if="$zoho">
                 <ZohoLeadsForm
                   @click="sendEvent('click', item, 'Interested')"

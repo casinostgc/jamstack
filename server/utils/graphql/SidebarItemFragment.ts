@@ -9,6 +9,10 @@ export const SidebarItemFragment = gql`
     body
     buttonText
     buttonLink
+
+    component
+    componentProps
+
     sys {
       id
       firstPublishedAt

@@ -7,9 +7,20 @@ export const PageFragment = gql`
     subtitle
     navigationTitle
     icon
+
+    sidebarCollection {
+      items {
+        ...SidebarItemFragment
+      }
+    }
+    sidebarReplace
+    sidebarAppend
+
     sys {
       id
       firstPublishedAt
     }
   }
+
+  ${SidebarItemFragment}
 `

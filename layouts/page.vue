@@ -27,9 +27,15 @@ const headerImage = computed(
 
 const { breadcrumbs } = useBreadcrumbs([
   {
-    title: page.value?.title!,
+    title: page?.value?.navigationTitle ?? page?.value?.title!,
   },
 ])
+
+const { sidebarItems, sidebarReplace, sidebarAppend } = useSidebar(
+  page.value?.sidebarCollection?.items.map((i) => i!),
+  page.value?.sidebarReplace!,
+  page.value?.sidebarAppend!
+)
 </script>
 
 <template>
@@ -71,9 +77,21 @@ const { breadcrumbs } = useBreadcrumbs([
         </v-col>
 
         <v-col cols="12" sm="5" md="4">
-          <slot name="sidebar"></slot>
+          <slot name="sidebar">
+            <SidebarItem
+              v-if="sidebarAppend"
+              v-for="item in sidebarItems"
+              :item="item"
+            />
 
-          <Sidebar />
+            <Sidebar v-if="!sidebarReplace" />
+
+            <SidebarItem
+              v-if="!sidebarAppend"
+              v-for="item in sidebarItems"
+              :item="item"
+            />
+          </slot>
         </v-col>
       </v-row>
     </v-container>

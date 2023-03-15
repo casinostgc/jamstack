@@ -20,8 +20,8 @@ const articles = computed(() => data.value?.items ?? [])
 
 useBreadcrumbs([
   {
-    title: 'News',
-    href: '/news',
+    title: page?.value?.navigationTitle ?? page?.value?.title!,
+    href: page?.value.slug!,
     disabled: true,
   },
 ])

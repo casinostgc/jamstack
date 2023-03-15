@@ -1,11 +1,17 @@
 <script setup lang="ts">
-const { settings } = useSiteSettings()
-const sidebarItems = computed(() => settings.sidebarCollection?.items ?? [])
+import { SidebarItem } from '~~/types/contentful'
+defineProps<{ item: SidebarItem }>()
 </script>
 
 <template>
-  <v-card v-for="item in sidebarItems" class="mb-4">
-    <v-img v-if="item?.image?.url" :src="item?.image?.url"></v-img>
+  <component
+    v-if="item.component"
+    :is="item.component"
+    v-bind="item.componentProps"
+  />
+
+  <v-card v-else class="mb-4">
+    <v-img v-if="item?.image?.url" :src="item?.image?.url!"></v-img>
 
     <v-card-title v-if="item?.title"> {{ item?.title }} </v-card-title>
 
@@ -13,10 +19,9 @@ const sidebarItems = computed(() => settings.sidebarCollection?.items ?? [])
 
     <v-divider class="mx-4"></v-divider>
 
-    <v-card-actions>
+    <v-card-actions v-if="item?.buttonText && item?.buttonLink">
       <v-btn
-        v-if="item?.buttonText && item?.buttonLink"
-        :href="item?.buttonLink"
+        :href="item?.buttonLink!"
         variant="text"
         block
         color="deep-purple-lighten-1"

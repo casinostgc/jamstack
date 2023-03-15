@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { NewsArticle } from '~~/types/contentful'
+import { NewsArticle, Page } from '~~/types/contentful'
+
+const page = inject<Ref<Page>>('page')
 
 const { path } = useRoute()
 const { data: article } = await useFetch<NewsArticle>(
@@ -8,14 +10,20 @@ const { data: article } = await useFetch<NewsArticle>(
 
 useBreadcrumbs([
   {
-    title: 'News',
-    href: '/news',
+    title: page?.value?.navigationTitle ?? page?.value?.title!,
+    href: page?.value.slug!,
   },
   {
     title: article.value?.title!,
     disabled: true,
   },
 ])
+
+// useSidebar(
+//   article.value?.sidebarCollection?.items.map((i) => i!),
+//   article.value?.sidebarReplace!,
+//   article.value?.sidebarAppend!
+// )
 </script>
 
 <template>

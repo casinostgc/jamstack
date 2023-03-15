@@ -13,6 +13,7 @@ export type Scalars = {
   DateTime: any;
   Dimension: any;
   HexColor: any;
+  JSON: any;
   Quality: any;
 };
 
@@ -766,6 +767,9 @@ export type Page = Entry & {
   icon?: Maybe<Scalars['String']>;
   linkedFrom?: Maybe<PageLinkingCollections>;
   navigationTitle?: Maybe<Scalars['String']>;
+  sidebarAppend?: Maybe<Scalars['Boolean']>;
+  sidebarCollection?: Maybe<PageSidebarCollection>;
+  sidebarReplace?: Maybe<Scalars['Boolean']>;
   slug?: Maybe<Scalars['String']>;
   subtitle?: Maybe<Scalars['String']>;
   sys: Sys;
@@ -800,6 +804,27 @@ export type PageLinkedFromArgs = {
 
 /** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/page) */
 export type PageNavigationTitleArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/page) */
+export type PageSidebarAppendArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/page) */
+export type PageSidebarCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/page) */
+export type PageSidebarReplaceArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
@@ -855,6 +880,13 @@ export type PageFilter = {
   navigationTitle_not?: InputMaybe<Scalars['String']>;
   navigationTitle_not_contains?: InputMaybe<Scalars['String']>;
   navigationTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  sidebarAppend?: InputMaybe<Scalars['Boolean']>;
+  sidebarAppend_exists?: InputMaybe<Scalars['Boolean']>;
+  sidebarAppend_not?: InputMaybe<Scalars['Boolean']>;
+  sidebarCollection_exists?: InputMaybe<Scalars['Boolean']>;
+  sidebarReplace?: InputMaybe<Scalars['Boolean']>;
+  sidebarReplace_exists?: InputMaybe<Scalars['Boolean']>;
+  sidebarReplace_not?: InputMaybe<Scalars['Boolean']>;
   slug?: InputMaybe<Scalars['String']>;
   slug_contains?: InputMaybe<Scalars['String']>;
   slug_exists?: InputMaybe<Scalars['Boolean']>;
@@ -906,6 +938,10 @@ export enum PageOrder {
   IconDesc = 'icon_DESC',
   NavigationTitleAsc = 'navigationTitle_ASC',
   NavigationTitleDesc = 'navigationTitle_DESC',
+  SidebarAppendAsc = 'sidebarAppend_ASC',
+  SidebarAppendDesc = 'sidebarAppend_DESC',
+  SidebarReplaceAsc = 'sidebarReplace_ASC',
+  SidebarReplaceDesc = 'sidebarReplace_DESC',
   SlugAsc = 'slug_ASC',
   SlugDesc = 'slug_DESC',
   SubtitleAsc = 'subtitle_ASC',
@@ -921,6 +957,14 @@ export enum PageOrder {
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC'
 }
+
+export type PageSidebarCollection = {
+  __typename?: 'PageSidebarCollection';
+  items: Array<Maybe<SidebarItem>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
 
 export type Query = {
   __typename?: 'Query';
@@ -1077,6 +1121,7 @@ export type Settings = Entry & {
   companyName?: Maybe<Scalars['String']>;
   companyPhone?: Maybe<Scalars['String']>;
   contentfulMetadata: ContentfulMetadata;
+  cruises?: Maybe<Asset>;
   flights?: Maybe<Asset>;
   linkedFrom?: Maybe<SettingsLinkingCollections>;
   navigationCollection?: Maybe<SettingsNavigationCollection>;
@@ -1101,6 +1146,13 @@ export type SettingsCompanyNameArgs = {
 /** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/settings) */
 export type SettingsCompanyPhoneArgs = {
   locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/settings) */
+export type SettingsCruisesArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
 };
 
 
@@ -1173,6 +1225,7 @@ export type SettingsFilter = {
   companyPhone_not_contains?: InputMaybe<Scalars['String']>;
   companyPhone_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  cruises_exists?: InputMaybe<Scalars['Boolean']>;
   flights_exists?: InputMaybe<Scalars['Boolean']>;
   navigationCollection_exists?: InputMaybe<Scalars['Boolean']>;
   sidebarCollection_exists?: InputMaybe<Scalars['Boolean']>;
@@ -1240,6 +1293,8 @@ export type SidebarItem = Entry & {
   body?: Maybe<Scalars['String']>;
   buttonLink?: Maybe<Scalars['String']>;
   buttonText?: Maybe<Scalars['String']>;
+  component?: Maybe<Scalars['String']>;
+  componentProps?: Maybe<Scalars['JSON']>;
   contentfulMetadata: ContentfulMetadata;
   image?: Maybe<Asset>;
   linkedFrom?: Maybe<SidebarItemLinkingCollections>;
@@ -1262,6 +1317,18 @@ export type SidebarItemButtonLinkArgs = {
 
 /** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/sidebarItem) */
 export type SidebarItemButtonTextArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/sidebarItem) */
+export type SidebarItemComponentArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/sidebarItem) */
+export type SidebarItemComponentPropsArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
@@ -1316,6 +1383,14 @@ export type SidebarItemFilter = {
   buttonText_not?: InputMaybe<Scalars['String']>;
   buttonText_not_contains?: InputMaybe<Scalars['String']>;
   buttonText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  component?: InputMaybe<Scalars['String']>;
+  componentProps_exists?: InputMaybe<Scalars['Boolean']>;
+  component_contains?: InputMaybe<Scalars['String']>;
+  component_exists?: InputMaybe<Scalars['Boolean']>;
+  component_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  component_not?: InputMaybe<Scalars['String']>;
+  component_not_contains?: InputMaybe<Scalars['String']>;
+  component_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
   image_exists?: InputMaybe<Scalars['Boolean']>;
   sys?: InputMaybe<SysFilter>;
@@ -1331,11 +1406,20 @@ export type SidebarItemFilter = {
 export type SidebarItemLinkingCollections = {
   __typename?: 'SidebarItemLinkingCollections';
   entryCollection?: Maybe<EntryCollection>;
+  pageCollection?: Maybe<PageCollection>;
   settingsCollection?: Maybe<SettingsCollection>;
 };
 
 
 export type SidebarItemLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+
+export type SidebarItemLinkingCollectionsPageCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
@@ -1355,6 +1439,8 @@ export enum SidebarItemOrder {
   ButtonLinkDesc = 'buttonLink_DESC',
   ButtonTextAsc = 'buttonText_ASC',
   ButtonTextDesc = 'buttonText_DESC',
+  ComponentAsc = 'component_ASC',
+  ComponentDesc = 'component_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',

@@ -20,8 +20,8 @@ const casinos = computed(() => data.value?.items ?? [])
 
 useBreadcrumbs([
   {
-    title: 'Casinos',
-    href: '/casinos',
+    title: page?.value?.navigationTitle ?? page?.value?.title!,
+    href: page?.value.slug!,
     disabled: true,
   },
 ])
