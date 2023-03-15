@@ -1,24 +1,9 @@
-<template>
-  <v-app>
-    <SiteHeader />
-
-    <v-main>
-      <Nuxt />
-    </v-main>
-
-    <SiteFooter />
-  </v-app>
-</template>
-
-<script>
-export default {
-  name: 'DefaultLayout',
-}
+<script setup lang="ts">
+//
 </script>
 
-<style>
-.nuxt-content img {
-  max-width: 100%;
-  margin: 1em auto;
-}
-</style>
+<template>
+  <v-main>
+    <slot></slot>
+  </v-main>
+</template>

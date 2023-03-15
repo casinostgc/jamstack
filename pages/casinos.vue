@@ -1,30 +1,8 @@
+<script setup lang="ts"></script>
+
 <template>
-  <main>
-    <PageHeader :page="page"> </PageHeader>
-
-    <v-container class="my-5">
-      <!-- <SiteSidebarSlot> -->
-      <NuxtChild />
-      <!-- </SiteSidebarSlot> -->
-    </v-container>
-  </main>
+  <NuxtLayout name="page">
+    <NuxtPage />
+    <!-- <template #sidebar>sidebar</template> -->
+  </NuxtLayout>
 </template>
-
-<script>
-export default {
-  name: 'News',
-
-  async asyncData({ $content, error }) {
-    try {
-      const page = await $content('casinos_index').fetch()
-      return { page }
-    } catch (e) {
-      error({ message: e.message })
-    }
-  },
-
-  head: {
-    title: 'Casinos',
-  },
-}
-</script>

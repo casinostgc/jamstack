@@ -4,10 +4,8 @@ import {
   // @ts-ignore
 } from 'vue-instantsearch/vue3/es/index.js'
 
-const { activeIndex, routing } = useAlgoliaIndex('Flights')
+const { activeIndex, routing } = useAlgoliaIndex('Cruises')
 const algolia = useAlgoliaRef()
-
-const dialog = ref(false)
 </script>
 
 <template>
@@ -18,7 +16,7 @@ const dialog = ref(false)
   >
     <NuxtLayout name="page">
       <!-- <NuxtPage /> -->
-      <Flights card-header card-actions flat />
+      <Cruises card-header card-actions flat />
       <!-- <template #sidebar>sidebar</template> -->
     </NuxtLayout>
   </ais-instant-search>

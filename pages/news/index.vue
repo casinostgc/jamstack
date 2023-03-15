@@ -1,57 +1,64 @@
+<script setup lang="ts">
+import { NewsArticle, Page } from '~~/types/contentful'
+
+const page = inject<Ref<Page>>('page')
+
+const route = useRoute()
+
+const { data } = await useFetch<{
+  total: number
+  items: NewsArticle[]
+}>(`/api/articles?page=${route.query.page}`)
+
+if (!data) {
+  throw createError({
+    //
+  })
+}
+
+const articles = computed(() => data.value?.items ?? [])
+
+useBreadcrumbs([
+  {
+    title: page?.value?.navigationTitle ?? page?.value?.title!,
+    href: page?.value.slug!,
+    disabled: true,
+  },
+])
+</script>
+
 <template>
   <article>
-    <Breadcrumbs :crumbs="[{ text: 'News' }]" />
+    <section v-if="articles?.length" id="articles">
+      <v-list lines="two">
+        <template v-for="article in articles">
+          <v-list-item :href="article.slug!">
+            <template #prepend>
+              <v-avatar color="deep-purple-lighten-1">
+                <v-icon>{{ page?.icon }}</v-icon>
+              </v-avatar>
+            </template>
 
-    <nuxt-content :document="page" />
+            <v-list-item-title>
+              {{ article.title }}
+            </v-list-item-title>
 
-    <v-card class="mt-5">
-      <v-list>
-        <template v-for="(post, i) in posts">
-          <v-divider v-if="i !== 0" inset :key="`divider-${i}`"></v-divider>
-          <v-list-item
-            :key="i"
-            :to="`/news/${post.slug}`"
-            three-line
-            router
-            exact
-          >
-            <v-list-item-avatar color="deep-purple lighten-1">
-              <v-icon dark> mdi-newspaper </v-icon>
-            </v-list-item-avatar>
-            <v-list-item-content>
-              <v-list-item-title v-text="post.title" />
-              <v-list-item-subtitle
-                v-text="new Date(post.createdAt).toLocaleString()"
-                class="text-caption"
-              />
-              <v-list-item-subtitle
-                v-if="post.subtitle"
-                v-text="post.subtitle"
-                class="mt-1"
-              />
-            </v-list-item-content>
+            <v-list-item-subtitle>
+              {{ article.subtitle }}
+            </v-list-item-subtitle>
+
+            <v-list-item-subtitle class="text-caption">
+              {{ new Date(article.sys.firstPublishedAt).toLocaleString() }}
+            </v-list-item-subtitle>
           </v-list-item>
+
+          <v-divider inset></v-divider>
         </template>
       </v-list>
-    </v-card>
+    </section>
+
+    <section v-else :style="{ textAlign: 'center' }">No Articles</section>
+
+    <Pagination :total="data?.total!" :limit="10" base="news" />
   </article>
 </template>
-
-<script>
-export default {
-  name: 'News',
-
-  async asyncData({ $content, params, error }) {
-    try {
-      const page = await $content('news').fetch()
-      const posts = await $content('posts')
-        .sortBy('createdAt', 'desc')
-        .without(['body'])
-        .fetch()
-      return { page, posts }
-    } catch (e) {
-      error({ message: e.message })
-    }
-  },
-}
-</script>

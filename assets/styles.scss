@@ -1,0 +1,69 @@
+@use 'vuetify/lib/styles/main.sass' with (
+  $font-size-root: 18px,
+  // $utilities: false,
+  // $color-pack: false
+);
+
+.rte {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding-top: 5em;
+    margin-top: -4em;
+    margin-bottom: 0.5em;
+    // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  blockquote {
+    font-size: 0.9rem;
+    font-weight: 300;
+    padding-left: 18px;
+    border-left: solid 3px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  hr {
+    margin-bottom: 1.5em;
+  }
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+  &:not(& ul, & ol) {
+    margin-bottom: 1em;
+  }
+  padding-inline-start: 40px;
+}
+
+// // pagination fix
+// ul,
+// ol {
+//   &.v-pagination__list {
+//     margin: 2em 0;
+//     padding: 0;
+//   }
+// }
+
+// // button wrapping
+// .v-btn {
+//   white-space: pre-wrap !important;
+// }
+
+// limit v-container to 1200px
+@media (min-width: 1920px) {
+  .v-container {
+    max-width: 1200px !important;
+  }
+}
