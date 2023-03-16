@@ -9,6 +9,10 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
 
+  generate: {
+    routes: ['/_redirects'],
+  },
+
   modules: [
     //
     '@nuxtjs/algolia',
