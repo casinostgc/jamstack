@@ -983,6 +983,8 @@ export type Query = {
   settingsCollection?: Maybe<SettingsCollection>;
   sidebarItem?: Maybe<SidebarItem>;
   sidebarItemCollection?: Maybe<SidebarItemCollection>;
+  vanityUrl?: Maybe<VanityUrl>;
+  vanityUrlCollection?: Maybe<VanityUrlCollection>;
 };
 
 
@@ -1112,6 +1114,23 @@ export type QuerySidebarItemCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<SidebarItemFilter>;
+};
+
+
+export type QueryVanityUrlArgs = {
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+export type QueryVanityUrlCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<VanityUrlOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<VanityUrlFilter>;
 };
 
 /** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/settings) */
@@ -1499,6 +1518,107 @@ export type SysFilter = {
   publishedVersion_not?: InputMaybe<Scalars['Float']>;
   publishedVersion_not_in?: InputMaybe<Array<InputMaybe<Scalars['Float']>>>;
 };
+
+/** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/vanityUrl) */
+export type VanityUrl = Entry & {
+  __typename?: 'VanityUrl';
+  contentfulMetadata: ContentfulMetadata;
+  linkedFrom?: Maybe<VanityUrlLinkingCollections>;
+  source?: Maybe<Scalars['String']>;
+  sys: Sys;
+  target?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/vanityUrl) */
+export type VanityUrlLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/vanityUrl) */
+export type VanityUrlSourceArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/vanityUrl) */
+export type VanityUrlTargetArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/vanityUrl) */
+export type VanityUrlTitleArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+export type VanityUrlCollection = {
+  __typename?: 'VanityUrlCollection';
+  items: Array<Maybe<VanityUrl>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export type VanityUrlFilter = {
+  AND?: InputMaybe<Array<InputMaybe<VanityUrlFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<VanityUrlFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  source?: InputMaybe<Scalars['String']>;
+  source_contains?: InputMaybe<Scalars['String']>;
+  source_exists?: InputMaybe<Scalars['Boolean']>;
+  source_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  source_not?: InputMaybe<Scalars['String']>;
+  source_not_contains?: InputMaybe<Scalars['String']>;
+  source_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  sys?: InputMaybe<SysFilter>;
+  target?: InputMaybe<Scalars['String']>;
+  target_contains?: InputMaybe<Scalars['String']>;
+  target_exists?: InputMaybe<Scalars['Boolean']>;
+  target_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  target_not?: InputMaybe<Scalars['String']>;
+  target_not_contains?: InputMaybe<Scalars['String']>;
+  target_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  title?: InputMaybe<Scalars['String']>;
+  title_contains?: InputMaybe<Scalars['String']>;
+  title_exists?: InputMaybe<Scalars['Boolean']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  title_not?: InputMaybe<Scalars['String']>;
+  title_not_contains?: InputMaybe<Scalars['String']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type VanityUrlLinkingCollections = {
+  __typename?: 'VanityUrlLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type VanityUrlLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export enum VanityUrlOrder {
+  SourceAsc = 'source_ASC',
+  SourceDesc = 'source_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TargetAsc = 'target_ASC',
+  TargetDesc = 'target_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
 
 export type CfDestinationNestedFilter = {
   AND?: InputMaybe<Array<InputMaybe<CfDestinationNestedFilter>>>;
