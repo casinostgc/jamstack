@@ -6,9 +6,12 @@ import {
 </script>
 
 <template>
-  <v-card flat class="mb-4">
-    <v-card-title> Embarkation Port </v-card-title>
-    <v-card-text>
+  <v-list class="mb-4">
+    <v-list-subheader class="font-weight-bold mt-4 text-body-1 text-black">
+      Embarkation Port
+    </v-list-subheader>
+
+    <v-list-item>
       <ais-refinement-list
         attribute="departure_port"
         :limit="7"
@@ -16,12 +19,15 @@ import {
         :show-more-limit="100"
         searchable
       />
-    </v-card-text>
-  </v-card>
+    </v-list-item>
 
-  <v-card flat class="mb-4">
-    <v-card-title> Cruise Line </v-card-title>
-    <v-card-text>
+    <v-divider inset class="my-4"></v-divider>
+
+    <v-list-subheader class="font-weight-bold mt-4 text-body-1 text-black">
+      Cruise Line
+    </v-list-subheader>
+
+    <v-list-item>
       <ais-refinement-list
         attribute="cruise_line"
         :limit="7"
@@ -29,12 +35,15 @@ import {
         :show-more-limit="100"
         searchable
       />
-    </v-card-text>
-  </v-card>
+    </v-list-item>
 
-  <v-card flat class="mb-4">
-    <v-card-title> Cruise Ship </v-card-title>
-    <v-card-text>
+    <v-divider inset class="my-4"></v-divider>
+
+    <v-list-subheader class="font-weight-bold mt-4 text-body-1 text-black">
+      Cruise Ship
+    </v-list-subheader>
+
+    <v-list-item>
       <ais-refinement-list
         attribute="ship"
         :limit="7"
@@ -42,6 +51,6 @@ import {
         :show-more-limit="100"
         searchable
       />
-    </v-card-text>
-  </v-card>
+    </v-list-item>
+  </v-list>
 </template>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Page } from '~~/types/contentful'
 import {
   AisConfigure,
   AisSearchBox,
@@ -7,6 +8,8 @@ import {
   AisStats,
   // @ts-ignore
 } from 'vue-instantsearch/vue3/es/index.js'
+
+const page = inject<Ref<Page>>('page')
 
 const props = defineProps<{
   cardHeader?: boolean
@@ -39,37 +42,34 @@ const configure = ref({
 
     <ais-hits>
       <template v-slot="{ items, sendEvent }">
-        <v-table>
-          <thead>
-            <tr>
-              <th colspan="2">Departs From</th>
-              <th>Resort</th>
-              <th v-if="$zoho"></th>
-            </tr>
-          </thead>
-          <tbody class="text-body-2 text-capitalize">
-            <tr v-for="item in items" :key="item.objectID">
-              <td>
-                {{ item.departingairport }}
-              </td>
-              <td>
-                {{ item.departingat }}
-              </td>
-              <td>
-                <a :href="item.casinoPath">
-                  {{ item.casinoName ?? item.gamingresort }}
-                </a>
-              </td>
-              <td v-if="$zoho">
-                <ZohoLeadsForm
-                  @click="sendEvent('click', item, 'Interested')"
-                  button-size="x-small"
-                  :interest="JSON.stringify(item)"
-                />
-              </td>
-            </tr>
-          </tbody>
-        </v-table>
+        <template v-for="(item, i) in items">
+          <v-divider inset v-if="i !== 0"></v-divider>
+
+          <v-list-item lines="two" :href="item.casinoPath">
+            <template #prepend>
+              <v-avatar color="pink-lighten-2">
+                <v-icon>{{ page?.icon }}</v-icon>
+              </v-avatar>
+            </template>
+
+            <v-list-item-subtitle class="text-overline">
+              {{ new Date(item._departingat).toLocaleDateString() }}
+              {{ item.departingairport }}
+            </v-list-item-subtitle>
+
+            <v-list-item-title class="text-capitalize">
+              {{ (item.casinoName ?? item.gamingresort).toLowerCase() }}
+            </v-list-item-title>
+
+            <template #append v-if="$zoho">
+              <ZohoLeadsForm
+                @click="sendEvent('click', item, 'Interested')"
+                button-size="small"
+                :interest="JSON.stringify(item)"
+              />
+            </template>
+          </v-list-item>
+        </template>
       </template>
     </ais-hits>
 

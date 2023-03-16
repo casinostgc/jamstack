@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Page } from '~~/types/contentful'
 import {
   AisConfigure,
   AisSearchBox,
@@ -7,6 +8,8 @@ import {
   AisStats,
   // @ts-ignore
 } from 'vue-instantsearch/vue3/es/index.js'
+
+const page = inject<Ref<Page>>('page')
 
 const props = defineProps<{
   cardHeader?: boolean
@@ -39,36 +42,39 @@ const configure = ref({
 
     <ais-hits>
       <template v-slot="{ items, sendEvent }">
-        <v-table>
-          <thead>
-            <tr>
-              <th>Description</th>
-              <th colspan="2">Departs From</th>
-              <th v-if="$zoho"></th>
-            </tr>
-          </thead>
-          <tbody class="text-body-2 text-capitalize">
-            <tr v-for="item in items" :key="item.objectID">
-              <td>
-                {{ item.description.toLowerCase() }}
-              </td>
-              <td>
-                {{ item.departure_port.toLowerCase() }}
-              </td>
-              <td>
-                {{ new Date(item._embarkation_date).toLocaleDateString() }}
-              </td>
+        <template v-for="(item, i) in items">
+          <v-divider inset v-if="i !== 0"></v-divider>
 
-              <td v-if="$zoho">
-                <ZohoLeadsForm
-                  @click="sendEvent('click', item, 'Interested')"
-                  button-size="x-small"
-                  :interest="JSON.stringify(item)"
-                />
-              </td>
-            </tr>
-          </tbody>
-        </v-table>
+          <v-list-item lines="three">
+            <template #prepend>
+              <v-avatar color="blue-lighten-1">
+                <v-icon>{{ page?.icon }}</v-icon>
+              </v-avatar>
+            </template>
+
+            <v-list-item-subtitle class="text-overline">
+              {{ new Date(item._embarkation_date).toLocaleDateString() }}
+              {{ item.departure_port }}
+            </v-list-item-subtitle>
+
+            <v-list-item-title class="text-capitalize">
+              {{ item.description.toLowerCase() }}
+            </v-list-item-title>
+
+            <v-list-item-subtitle class="text-capitalize">
+              {{ item.cruise_line.toLowerCase() }} -
+              {{ item.ship.toLowerCase() }}
+            </v-list-item-subtitle>
+
+            <template #append v-if="$zoho">
+              <ZohoLeadsForm
+                @click="sendEvent('click', item, 'Interested')"
+                button-size="small"
+                :interest="JSON.stringify(item)"
+              />
+            </template>
+          </v-list-item>
+        </template>
       </template>
     </ais-hits>
 

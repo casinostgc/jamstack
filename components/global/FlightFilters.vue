@@ -6,9 +6,12 @@ import {
 </script>
 
 <template>
-  <v-card flat class="mb-4">
-    <v-card-title> Resort </v-card-title>
-    <v-card-text>
+  <v-list class="mb-4">
+    <v-list-subheader class="font-weight-bold mt-4 text-body-1 text-black">
+      Resort
+    </v-list-subheader>
+
+    <v-list-item>
       <ais-refinement-list
         attribute="casinoName"
         :limit="5"
@@ -16,12 +19,15 @@ import {
         :show-more-limit="100"
         searchable
       />
-    </v-card-text>
-  </v-card>
+    </v-list-item>
 
-  <v-card flat class="mb-4">
-    <v-card-title> Departing Airport </v-card-title>
-    <v-card-text>
+    <v-divider inset class="my-4"></v-divider>
+
+    <v-list-subheader class="font-weight-bold mt-4 text-body-1 text-black">
+      Departing Airport
+    </v-list-subheader>
+
+    <v-list-item>
       <ais-refinement-list
         attribute="departingairport"
         :limit="7"
@@ -29,6 +35,6 @@ import {
         :show-more-limit="100"
         searchable
       />
-    </v-card-text>
-  </v-card>
+    </v-list-item>
+  </v-list>
 </template>

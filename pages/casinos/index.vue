@@ -33,7 +33,7 @@ useBreadcrumbs([
       <template v-for="casino in casinos">
         <v-list-item :href="casino.slug!">
           <template #prepend>
-            <v-avatar color="teal">
+            <v-avatar color="teal-lighten-1">
               <v-icon>{{ page?.icon }}</v-icon>
             </v-avatar>
           </template>
