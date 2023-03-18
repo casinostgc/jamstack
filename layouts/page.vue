@@ -68,10 +68,7 @@ const { sidebarItems, sidebarReplace, sidebarAppend } = useSidebar(
 
         <v-row>
           <v-col cols="12" sm="7" md="8">
-            <div
-              class="rte"
-              v-html="useMarkdown(page?.body! ?? undefined) "
-            ></div>
+            <Rte :markdown="page?.body!" />
 
             <!--  -->
             <slot></slot>

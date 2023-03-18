@@ -31,10 +31,23 @@ const configure = ref({
 
     <v-card-text v-if="cardHeader">
       <v-row justify="space-between" align="end">
-        <v-col>
-          <ais-search-box />
+        <v-col cols="12">
+          <ais-search-box>
+            <template v-slot="{ currentRefinement, isSearchStalled, refine }">
+              <v-text-field
+                xtype="search"
+                placeholder="Search Cruises"
+                :value="currentRefinement"
+                @update:model-value="refine($event)"
+                hide-details
+                variant="solo"
+                clearable
+                :loading="isSearchStalled"
+              />
+            </template>
+          </ais-search-box>
         </v-col>
-        <v-col class="text-right text-caption">
+        <v-col cols="12" class="text-right text-caption">
           <ais-stats />
         </v-col>
       </v-row>

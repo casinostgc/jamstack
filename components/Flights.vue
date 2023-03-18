@@ -31,10 +31,23 @@ const configure = ref({
 
     <v-card-text v-if="cardHeader">
       <v-row justify="space-between" align="end">
-        <v-col>
-          <ais-search-box />
+        <v-col cols="12">
+          <ais-search-box>
+            <template v-slot="{ currentRefinement, isSearchStalled, refine }">
+              <v-text-field
+                xtype="search"
+                placeholder="Search Flights"
+                :value="currentRefinement"
+                @update:model-value="refine($event)"
+                hide-details
+                variant="solo"
+                clearable
+                :loading="isSearchStalled"
+              />
+            </template>
+          </ais-search-box>
         </v-col>
-        <v-col class="text-right text-caption">
+        <v-col cols="12" class="text-right text-caption">
           <ais-stats />
         </v-col>
       </v-row>
@@ -45,7 +58,7 @@ const configure = ref({
         <template v-for="(item, i) in items">
           <v-divider inset v-if="i !== 0"></v-divider>
 
-          <v-list-item lines="two" :href="item.casinoPath">
+          <v-list-item lines="three" :href="item.casino.slug">
             <template #prepend>
               <v-avatar color="pink-lighten-2">
                 <v-icon>{{ page?.icon }}</v-icon>
@@ -58,8 +71,12 @@ const configure = ref({
             </v-list-item-subtitle>
 
             <v-list-item-title class="text-capitalize">
-              {{ (item.casinoName ?? item.gamingresort).toLowerCase() }}
+              {{ (item.casino.title ?? item.gamingresort).toLowerCase() }}
             </v-list-item-title>
+
+            <v-list-item-subtitle class="">
+              {{ item.casino.destination.title }}
+            </v-list-item-subtitle>
 
             <template #append v-if="$zoho">
               <ZohoLeadsForm

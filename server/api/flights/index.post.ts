@@ -56,8 +56,7 @@ export default defineEventHandler(async (event) => {
       ...x,
       _departingat: DateTime.fromFormat(x.departingat, 'MM/dd/yy').valueOf(),
       _arrivingat: DateTime.fromFormat(x.arrivingat, 'MM/dd/yy').valueOf(),
-      casinoPath: casino?.slug,
-      casinoName: casino?.title,
+      casino,
     }
   })
 

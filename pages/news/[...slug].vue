@@ -38,7 +38,7 @@ useBreadcrumbs([
 
     <v-divider class="mb-8"></v-divider>
 
-    <div class="rte" v-html="useMarkdown(article?.body! ?? undefined) "></div>
+    <Rte :markdown="article?.body!" />
 
     <v-divider class="mb-8"></v-divider>
 
