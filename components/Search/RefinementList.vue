@@ -2,7 +2,6 @@
 import {
   AisRefinementList,
   AisHighlight,
-  // @ts-ignore
 } from 'vue-instantsearch/vue3/es/index.js'
 
 const props = withDefaults(

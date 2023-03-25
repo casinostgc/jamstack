@@ -4,9 +4,7 @@ import {
   AisConfigure,
   AisSearchBox,
   AisHits,
-  AisPagination,
   AisStats,
-  // @ts-ignore
 } from 'vue-instantsearch/vue3/es/index.js'
 
 const page = inject<Ref<Page>>('page')
@@ -92,7 +90,7 @@ const configure = ref({
 
     <v-card-actions v-if="cardActions">
       <v-spacer></v-spacer>
-      <ais-pagination :padding="1"></ais-pagination>
+      <SearchPagination />
       <v-spacer></v-spacer>
     </v-card-actions>
   </v-card>

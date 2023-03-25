@@ -67,3 +67,12 @@ ol {
     max-width: 1200px !important;
   }
 }
+
+// pagination fix
+ul,
+ol {
+  &.v-pagination__list {
+    margin: 2em 0;
+    padding: 0;
+  }
+}

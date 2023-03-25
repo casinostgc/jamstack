@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import {
-  AisInstantSearch,
-  // @ts-ignore
-} from 'vue-instantsearch/vue3/es/index.js'
+import { AisInstantSearch } from 'vue-instantsearch/vue3/es/index.js'
 
 const { activeIndex, routing } = useAlgoliaIndex('Cruises')
 const algolia = useAlgoliaRef()
