@@ -6,6 +6,7 @@ import {
   AisHits,
   AisStats,
 } from 'vue-instantsearch/vue3/es/index.js'
+import { DateTime } from 'luxon'
 
 const page = inject<Ref<Page>>('page')
 
@@ -64,7 +65,11 @@ const configure = ref({
             </template>
 
             <v-list-item-subtitle class="text-overline">
-              {{ new Date(item._embarkation_date).toLocaleDateString() }}
+              {{
+                DateTime.fromISO(item.embarkation_date)
+                  .toJSDate()
+                  .toLocaleDateString()
+              }}
               {{ item.departure_port }}
             </v-list-item-subtitle>
 
