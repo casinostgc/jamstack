@@ -36,21 +36,29 @@ const { sidebarItems, sidebarReplace, sidebarAppend } = useSidebar(
   page.value?.sidebarReplace!,
   page.value?.sidebarAppend!
 )
+
+const useFullSizeHeader = computed(
+  () => !page.value?.overlayLogo && !!page.value?.hideTitle
+)
 </script>
 
 <template>
   <NuxtLayout name="default">
     <v-main>
       <v-img
-        :aspect-ratio="-1"
+        :aspect-ratio="!useFullSizeHeader ? -1 : undefined"
         :src="headerImage"
-        gradient="45deg, rgba(25, 32, 72, 0.7), rgba(211, 136, 22, 0.7)"
+        :gradient="
+          !page.disableGradient
+            ? `45deg, rgba(25, 32, 72, 0.7), rgba(211, 136, 22, 0.7)`
+            : undefined
+        "
         cover
       >
         <v-container class="text-center text-white my-8 my-sm-16">
-          <Logo v-if="path === '/'" :style="{ maxWidth: '600px' }" />
+          <Logo v-if="page.overlayLogo" :style="{ maxWidth: '600px' }" />
 
-          <template v-else>
+          <template v-else-if="!page.hideTitle">
             <h1 class="font-weight-regular text-h3">
               {{ page?.title }}
             </h1>

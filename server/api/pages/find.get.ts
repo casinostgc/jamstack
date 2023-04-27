@@ -8,9 +8,14 @@ export default defineEventHandler(async (event) => {
       pageCollection(where: { slug: $slug }, limit: 1) {
         items {
           ...PageFragment
+
           headerImage {
             url
           }
+          overlayLogo
+          hideTitle
+          disableGradient
+
           body
         }
       }

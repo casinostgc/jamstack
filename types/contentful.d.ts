@@ -763,10 +763,13 @@ export type Page = Entry & {
   __typename?: 'Page';
   body?: Maybe<Scalars['String']>;
   contentfulMetadata: ContentfulMetadata;
+  disableGradient?: Maybe<Scalars['Boolean']>;
   headerImage?: Maybe<Asset>;
+  hideTitle?: Maybe<Scalars['Boolean']>;
   icon?: Maybe<Scalars['String']>;
   linkedFrom?: Maybe<PageLinkingCollections>;
   navigationTitle?: Maybe<Scalars['String']>;
+  overlayLogo?: Maybe<Scalars['Boolean']>;
   sidebarAppend?: Maybe<Scalars['Boolean']>;
   sidebarCollection?: Maybe<PageSidebarCollection>;
   sidebarReplace?: Maybe<Scalars['Boolean']>;
@@ -784,9 +787,21 @@ export type PageBodyArgs = {
 
 
 /** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/page) */
+export type PageDisableGradientArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/page) */
 export type PageHeaderImageArgs = {
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/page) */
+export type PageHideTitleArgs = {
+  locale?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -804,6 +819,12 @@ export type PageLinkedFromArgs = {
 
 /** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/page) */
 export type PageNavigationTitleArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/page) */
+export type PageOverlayLogoArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
@@ -865,7 +886,13 @@ export type PageFilter = {
   body_not_contains?: InputMaybe<Scalars['String']>;
   body_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  disableGradient?: InputMaybe<Scalars['Boolean']>;
+  disableGradient_exists?: InputMaybe<Scalars['Boolean']>;
+  disableGradient_not?: InputMaybe<Scalars['Boolean']>;
   headerImage_exists?: InputMaybe<Scalars['Boolean']>;
+  hideTitle?: InputMaybe<Scalars['Boolean']>;
+  hideTitle_exists?: InputMaybe<Scalars['Boolean']>;
+  hideTitle_not?: InputMaybe<Scalars['Boolean']>;
   icon?: InputMaybe<Scalars['String']>;
   icon_contains?: InputMaybe<Scalars['String']>;
   icon_exists?: InputMaybe<Scalars['Boolean']>;
@@ -880,6 +907,10 @@ export type PageFilter = {
   navigationTitle_not?: InputMaybe<Scalars['String']>;
   navigationTitle_not_contains?: InputMaybe<Scalars['String']>;
   navigationTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  overlayLogo?: InputMaybe<Scalars['Boolean']>;
+  overlayLogo_exists?: InputMaybe<Scalars['Boolean']>;
+  overlayLogo_not?: InputMaybe<Scalars['Boolean']>;
+  sidebar?: InputMaybe<CfSidebarItemNestedFilter>;
   sidebarAppend?: InputMaybe<Scalars['Boolean']>;
   sidebarAppend_exists?: InputMaybe<Scalars['Boolean']>;
   sidebarAppend_not?: InputMaybe<Scalars['Boolean']>;
@@ -934,10 +965,16 @@ export type PageLinkingCollectionsSettingsCollectionArgs = {
 };
 
 export enum PageOrder {
+  DisableGradientAsc = 'disableGradient_ASC',
+  DisableGradientDesc = 'disableGradient_DESC',
+  HideTitleAsc = 'hideTitle_ASC',
+  HideTitleDesc = 'hideTitle_DESC',
   IconAsc = 'icon_ASC',
   IconDesc = 'icon_DESC',
   NavigationTitleAsc = 'navigationTitle_ASC',
   NavigationTitleDesc = 'navigationTitle_DESC',
+  OverlayLogoAsc = 'overlayLogo_ASC',
+  OverlayLogoDesc = 'overlayLogo_DESC',
   SidebarAppendAsc = 'sidebarAppend_ASC',
   SidebarAppendDesc = 'sidebarAppend_DESC',
   SidebarReplaceAsc = 'sidebarReplace_ASC',
@@ -1246,7 +1283,9 @@ export type SettingsFilter = {
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
   cruises_exists?: InputMaybe<Scalars['Boolean']>;
   flights_exists?: InputMaybe<Scalars['Boolean']>;
+  navigation?: InputMaybe<CfPageNestedFilter>;
   navigationCollection_exists?: InputMaybe<Scalars['Boolean']>;
+  sidebar?: InputMaybe<CfSidebarItemNestedFilter>;
   sidebarCollection_exists?: InputMaybe<Scalars['Boolean']>;
   siteTitle?: InputMaybe<Scalars['String']>;
   siteTitle_contains?: InputMaybe<Scalars['String']>;
@@ -1634,6 +1673,116 @@ export type CfDestinationNestedFilter = {
   international?: InputMaybe<Scalars['Boolean']>;
   international_exists?: InputMaybe<Scalars['Boolean']>;
   international_not?: InputMaybe<Scalars['Boolean']>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']>;
+  title_contains?: InputMaybe<Scalars['String']>;
+  title_exists?: InputMaybe<Scalars['Boolean']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  title_not?: InputMaybe<Scalars['String']>;
+  title_not_contains?: InputMaybe<Scalars['String']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type CfPageNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfPageNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfPageNestedFilter>>>;
+  body?: InputMaybe<Scalars['String']>;
+  body_contains?: InputMaybe<Scalars['String']>;
+  body_exists?: InputMaybe<Scalars['Boolean']>;
+  body_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  body_not?: InputMaybe<Scalars['String']>;
+  body_not_contains?: InputMaybe<Scalars['String']>;
+  body_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  disableGradient?: InputMaybe<Scalars['Boolean']>;
+  disableGradient_exists?: InputMaybe<Scalars['Boolean']>;
+  disableGradient_not?: InputMaybe<Scalars['Boolean']>;
+  headerImage_exists?: InputMaybe<Scalars['Boolean']>;
+  hideTitle?: InputMaybe<Scalars['Boolean']>;
+  hideTitle_exists?: InputMaybe<Scalars['Boolean']>;
+  hideTitle_not?: InputMaybe<Scalars['Boolean']>;
+  icon?: InputMaybe<Scalars['String']>;
+  icon_contains?: InputMaybe<Scalars['String']>;
+  icon_exists?: InputMaybe<Scalars['Boolean']>;
+  icon_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  icon_not?: InputMaybe<Scalars['String']>;
+  icon_not_contains?: InputMaybe<Scalars['String']>;
+  icon_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  navigationTitle?: InputMaybe<Scalars['String']>;
+  navigationTitle_contains?: InputMaybe<Scalars['String']>;
+  navigationTitle_exists?: InputMaybe<Scalars['Boolean']>;
+  navigationTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  navigationTitle_not?: InputMaybe<Scalars['String']>;
+  navigationTitle_not_contains?: InputMaybe<Scalars['String']>;
+  navigationTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  overlayLogo?: InputMaybe<Scalars['Boolean']>;
+  overlayLogo_exists?: InputMaybe<Scalars['Boolean']>;
+  overlayLogo_not?: InputMaybe<Scalars['Boolean']>;
+  sidebarAppend?: InputMaybe<Scalars['Boolean']>;
+  sidebarAppend_exists?: InputMaybe<Scalars['Boolean']>;
+  sidebarAppend_not?: InputMaybe<Scalars['Boolean']>;
+  sidebarCollection_exists?: InputMaybe<Scalars['Boolean']>;
+  sidebarReplace?: InputMaybe<Scalars['Boolean']>;
+  sidebarReplace_exists?: InputMaybe<Scalars['Boolean']>;
+  sidebarReplace_not?: InputMaybe<Scalars['Boolean']>;
+  slug?: InputMaybe<Scalars['String']>;
+  slug_contains?: InputMaybe<Scalars['String']>;
+  slug_exists?: InputMaybe<Scalars['Boolean']>;
+  slug_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  slug_not?: InputMaybe<Scalars['String']>;
+  slug_not_contains?: InputMaybe<Scalars['String']>;
+  slug_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  subtitle?: InputMaybe<Scalars['String']>;
+  subtitle_contains?: InputMaybe<Scalars['String']>;
+  subtitle_exists?: InputMaybe<Scalars['Boolean']>;
+  subtitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  subtitle_not?: InputMaybe<Scalars['String']>;
+  subtitle_not_contains?: InputMaybe<Scalars['String']>;
+  subtitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']>;
+  title_contains?: InputMaybe<Scalars['String']>;
+  title_exists?: InputMaybe<Scalars['Boolean']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  title_not?: InputMaybe<Scalars['String']>;
+  title_not_contains?: InputMaybe<Scalars['String']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type CfSidebarItemNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfSidebarItemNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfSidebarItemNestedFilter>>>;
+  body?: InputMaybe<Scalars['String']>;
+  body_contains?: InputMaybe<Scalars['String']>;
+  body_exists?: InputMaybe<Scalars['Boolean']>;
+  body_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  body_not?: InputMaybe<Scalars['String']>;
+  body_not_contains?: InputMaybe<Scalars['String']>;
+  body_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonLink?: InputMaybe<Scalars['String']>;
+  buttonLink_contains?: InputMaybe<Scalars['String']>;
+  buttonLink_exists?: InputMaybe<Scalars['Boolean']>;
+  buttonLink_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonLink_not?: InputMaybe<Scalars['String']>;
+  buttonLink_not_contains?: InputMaybe<Scalars['String']>;
+  buttonLink_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonText?: InputMaybe<Scalars['String']>;
+  buttonText_contains?: InputMaybe<Scalars['String']>;
+  buttonText_exists?: InputMaybe<Scalars['Boolean']>;
+  buttonText_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  buttonText_not?: InputMaybe<Scalars['String']>;
+  buttonText_not_contains?: InputMaybe<Scalars['String']>;
+  buttonText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  component?: InputMaybe<Scalars['String']>;
+  componentProps_exists?: InputMaybe<Scalars['Boolean']>;
+  component_contains?: InputMaybe<Scalars['String']>;
+  component_exists?: InputMaybe<Scalars['Boolean']>;
+  component_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  component_not?: InputMaybe<Scalars['String']>;
+  component_not_contains?: InputMaybe<Scalars['String']>;
+  component_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  image_exists?: InputMaybe<Scalars['Boolean']>;
   sys?: InputMaybe<SysFilter>;
   title?: InputMaybe<Scalars['String']>;
   title_contains?: InputMaybe<Scalars['String']>;
