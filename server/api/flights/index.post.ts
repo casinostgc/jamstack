@@ -54,8 +54,8 @@ export default defineEventHandler(async (event) => {
 
     return {
       ...x,
-      _departingat: DateTime.fromFormat(x.departingat, 'MM/dd/yy').valueOf(),
-      _arrivingat: DateTime.fromFormat(x.arrivingat, 'MM/dd/yy').valueOf(),
+      _departingat: DateTime.fromFormat(x.departingat, 'yyyy-MM-dd').valueOf(),
+      _arrivingat: DateTime.fromFormat(x.arrivingat, 'yyyy-MM-dd').valueOf(),
       casino,
     }
   })

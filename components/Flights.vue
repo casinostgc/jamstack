@@ -66,7 +66,7 @@ const configure = ref({
 
             <v-list-item-subtitle class="text-overline">
               {{
-                DateTime.fromFormat(item.departingat, 'MM/dd/yy')
+                DateTime.fromISO(item.departingat)
                   .toJSDate()
                   .toLocaleDateString()
               }}
