@@ -27,3 +27,10 @@ const html = computed(() => {
 <template>
   <div class="rte" v-html="useMarkdown(html)"></div>
 </template>
+
+<style>
+.rte img {
+  display: flex;
+  margin: auto;
+}  
+</style>
