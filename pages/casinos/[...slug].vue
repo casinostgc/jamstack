@@ -29,7 +29,7 @@ useBreadcrumbs([
     <section>
       <h2>{{ casino?.title }}</h2>
 
-      <div v-html="useMarkdown(casino.body ?? '')"></div>
+      <Rte :markdown="casino.body ?? ''" />
     </section>
 
     <!-- <v-divider></v-divider> -->
