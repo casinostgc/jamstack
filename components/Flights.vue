@@ -1,27 +1,31 @@
 <script setup lang="ts">
-import { Page } from '~~/types/contentful'
+import { Page } from "~~/types/contentful";
 import {
   AisConfigure,
   AisSearchBox,
   AisHits,
   AisStats,
-} from 'vue-instantsearch/vue3/es/index.js'
-import { DateTime } from 'luxon'
+} from "vue-instantsearch/vue3/es/index.js";
+import { DateTime } from "luxon";
 
-const page = inject<Ref<Page>>('page')
+const page = inject<Ref<Page>>("page");
 
 const props = defineProps<{
-  cardHeader?: boolean
-  cardActions?: boolean
-  filters?: string[]
-}>()
+  cardHeader?: boolean;
+  cardActions?: boolean;
+  filters?: string[];
+}>();
 
 const configure = ref({
   filters: [
     `_departingat > ${new Date().valueOf()}`,
     ...(props.filters ?? []),
-  ].join(' AND '),
-})
+  ].join(" AND "),
+});
+
+const formatDate = (date: string) => {
+  return DateTime.fromISO(date).toJSDate().toLocaleDateString();
+};
 </script>
 
 <template>
@@ -65,12 +69,7 @@ const configure = ref({
             </template>
 
             <v-list-item-subtitle class="text-overline">
-              {{
-                DateTime.fromISO(item.departingat)
-                  .toJSDate()
-                  .toLocaleDateString()
-              }}
-              {{ item.departingairport }}
+              {{ item.casino.destination.title }}
             </v-list-item-subtitle>
 
             <v-list-item-title class="text-capitalize">
@@ -78,7 +77,9 @@ const configure = ref({
             </v-list-item-title>
 
             <v-list-item-subtitle class="">
-              {{ item.casino.destination.title }}
+              Departs {{ formatDate(item.departingat) }} from
+              <strong>{{ item.departingairport }}</strong
+              >, Returns {{ formatDate(item.arrivingat) }}
             </v-list-item-subtitle>
 
             <template #append v-if="$zoho">
