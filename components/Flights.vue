@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Page } from "~~/types/contentful";
+import type { Page } from "~~/types/contentful";
 import {
   AisConfigure,
   AisSearchBox,

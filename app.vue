@@ -2,14 +2,16 @@
 useHead({
   link: [
     {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/favicon.png',
+      rel: "icon",
+      type: "image/png",
+      href: "/favicon.png",
     },
   ],
-})
+});
 </script>
 
 <template>
-  <NuxtPage :key="$route.fullPath" />
+  <v-app>
+    <NuxtPage />
+  </v-app>
 </template>

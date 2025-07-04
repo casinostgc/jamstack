@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { NewsArticle, Page } from '~~/types/contentful'
+import type { NewsArticle, Page } from "~~/types/contentful";
 
-const page = inject<Ref<Page>>('page')
+const page = inject<Ref<Page>>("page");
 
-const { path } = useRoute()
+const { path } = useRoute();
 const { data: article } = await useFetch<NewsArticle>(
   `/api/articles/find?slug=${path}`
-)
+);
 
 useBreadcrumbs([
   {
@@ -17,7 +17,7 @@ useBreadcrumbs([
     title: article.value?.title!,
     disabled: true,
   },
-])
+]);
 
 // useSidebar(
 //   article.value?.sidebarCollection?.items.map((i) => i!),

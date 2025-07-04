@@ -1,17 +1,17 @@
-import { SidebarItem } from '~~/types/contentful'
-
-const sidebarItems = ref<SidebarItem[]>([])
-const sidebarReplace = ref<boolean>(false)
-const sidebarAppend = ref<boolean>(false)
+import type { SidebarItem } from "~~/types/contentful";
 
 export const useSidebar = (
   items: SidebarItem[] = [],
   replace: boolean = false,
   append: boolean = false
 ) => {
-  sidebarItems.value = items
-  sidebarReplace.value = replace
-  sidebarAppend.value = append
+  const sidebarItems = useState<SidebarItem[]>("sidebarItems", () => []);
+  const sidebarReplace = useState<boolean>("sidebarReplace", () => false);
+  const sidebarAppend = useState<boolean>("sidebarAppend", () => false);
 
-  return { sidebarItems, sidebarReplace, sidebarAppend }
-}
+  sidebarItems.value = items;
+  sidebarReplace.value = replace;
+  sidebarAppend.value = append;
+
+  return { sidebarItems, sidebarReplace, sidebarAppend };
+};

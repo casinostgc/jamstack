@@ -1,12 +1,11 @@
-import { Settings } from '~~/types/contentful'
-
-const settings = reactive<Partial<Settings>>({})
+import type { Settings } from "~~/types/contentful";
 
 export const useSiteSettings = () => {
-  const init = async () => {
-    const { data } = await useFetch('/api/settings')
-    Object.assign(settings, data.value)
-  }
+  const settings = useState<Settings | null>("siteSettings", () => null);
 
-  return { init, settings }
-}
+  callOnce("callSiteSettings", async () => {
+    settings.value = await $fetch("/api/settings");
+  });
+
+  return { settings };
+};

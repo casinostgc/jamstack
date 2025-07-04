@@ -238,8 +238,9 @@ export enum AssetOrder {
 }
 
 /** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/casino) */
-export type Casino = Entry & {
+export type Casino = Entry & _Node & {
   __typename?: 'Casino';
+  _id: Scalars['ID'];
   airportCode?: Maybe<Scalars['String']>;
   body?: Maybe<Scalars['String']>;
   contentfulMetadata: ContentfulMetadata;
@@ -269,6 +270,7 @@ export type CasinoBodyArgs = {
 export type CasinoDestinationArgs = {
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
+  where?: InputMaybe<DestinationFilter>;
 };
 
 
@@ -389,10 +391,26 @@ export enum CasinoOrder {
 
 export type ContentfulMetadata = {
   __typename?: 'ContentfulMetadata';
+  concepts: Array<Maybe<TaxonomyConcept>>;
   tags: Array<Maybe<ContentfulTag>>;
 };
 
+export type ContentfulMetadataConceptsDescendantsFilter = {
+  id_contains_all?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  id_contains_none?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  id_contains_some?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type ContentfulMetadataConceptsFilter = {
+  descendants?: InputMaybe<ContentfulMetadataConceptsDescendantsFilter>;
+  id_contains_all?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  id_contains_none?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  id_contains_some?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
 export type ContentfulMetadataFilter = {
+  concepts?: InputMaybe<ContentfulMetadataConceptsFilter>;
+  concepts_exists?: InputMaybe<Scalars['Boolean']>;
   tags?: InputMaybe<ContentfulMetadataTagsFilter>;
   tags_exists?: InputMaybe<Scalars['Boolean']>;
 };
@@ -405,7 +423,7 @@ export type ContentfulMetadataTagsFilter = {
 
 /**
  * Represents a tag entity for finding and organizing content easily.
- *     Find out more here: https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-tags
+ *       Find out more here: https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-tags
  */
 export type ContentfulTag = {
   __typename?: 'ContentfulTag';
@@ -414,8 +432,9 @@ export type ContentfulTag = {
 };
 
 /** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/destination) */
-export type Destination = Entry & {
+export type Destination = Entry & _Node & {
   __typename?: 'Destination';
+  _id: Scalars['ID'];
   body?: Maybe<Scalars['String']>;
   contentfulMetadata: ContentfulMetadata;
   international?: Maybe<Scalars['Boolean']>;
@@ -490,6 +509,7 @@ export type DestinationLinkingCollections = {
 export type DestinationLinkingCollectionsCasinoCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<DestinationLinkingCollectionsCasinoCollectionOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
@@ -501,6 +521,25 @@ export type DestinationLinkingCollectionsEntryCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
+
+export enum DestinationLinkingCollectionsCasinoCollectionOrder {
+  AirportCodeAsc = 'airportCode_ASC',
+  AirportCodeDesc = 'airportCode_DESC',
+  SlugAsc = 'slug_ASC',
+  SlugDesc = 'slug_DESC',
+  SubtitleAsc = 'subtitle_ASC',
+  SubtitleDesc = 'subtitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
 
 export enum DestinationOrder {
   InternationalAsc = 'international_ASC',
@@ -549,6 +588,7 @@ export enum EntryOrder {
 }
 
 export enum ImageFormat {
+  /** AVIF image format. */
   Avif = 'AVIF',
   /** JPG image format. */
   Jpg = 'JPG',
@@ -644,8 +684,9 @@ export type ImageTransformOptions = {
 };
 
 /** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/newsArticle) */
-export type NewsArticle = Entry & {
+export type NewsArticle = Entry & _Node & {
   __typename?: 'NewsArticle';
+  _id: Scalars['ID'];
   body?: Maybe<Scalars['String']>;
   contentfulMetadata: ContentfulMetadata;
   linkedFrom?: Maybe<NewsArticleLinkingCollections>;
@@ -759,8 +800,9 @@ export enum NewsArticleOrder {
 }
 
 /** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/page) */
-export type Page = Entry & {
+export type Page = Entry & _Node & {
   __typename?: 'Page';
+  _id: Scalars['ID'];
   body?: Maybe<Scalars['String']>;
   contentfulMetadata: ContentfulMetadata;
   disableGradient?: Maybe<Scalars['Boolean']>;
@@ -839,8 +881,10 @@ export type PageSidebarAppendArgs = {
 export type PageSidebarCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<PageSidebarCollectionOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<SidebarItemFilter>;
 };
 
 
@@ -960,9 +1004,29 @@ export type PageLinkingCollectionsEntryCollectionArgs = {
 export type PageLinkingCollectionsSettingsCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<PageLinkingCollectionsSettingsCollectionOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
+
+export enum PageLinkingCollectionsSettingsCollectionOrder {
+  CompanyEmailAsc = 'companyEmail_ASC',
+  CompanyEmailDesc = 'companyEmail_DESC',
+  CompanyNameAsc = 'companyName_ASC',
+  CompanyNameDesc = 'companyName_DESC',
+  CompanyPhoneAsc = 'companyPhone_ASC',
+  CompanyPhoneDesc = 'companyPhone_DESC',
+  SiteTitleAsc = 'siteTitle_ASC',
+  SiteTitleDesc = 'siteTitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 export enum PageOrder {
   DisableGradientAsc = 'disableGradient_ASC',
@@ -1003,8 +1067,29 @@ export type PageSidebarCollection = {
   total: Scalars['Int'];
 };
 
+export enum PageSidebarCollectionOrder {
+  ButtonLinkAsc = 'buttonLink_ASC',
+  ButtonLinkDesc = 'buttonLink_DESC',
+  ButtonTextAsc = 'buttonText_ASC',
+  ButtonTextDesc = 'buttonText_DESC',
+  ComponentAsc = 'component_ASC',
+  ComponentDesc = 'component_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 export type Query = {
   __typename?: 'Query';
+  _node?: Maybe<_Node>;
+  _nodes: Array<Maybe<_Node>>;
   asset?: Maybe<Asset>;
   assetCollection?: Maybe<AssetCollection>;
   casino?: Maybe<Casino>;
@@ -1022,6 +1107,20 @@ export type Query = {
   sidebarItemCollection?: Maybe<SidebarItemCollection>;
   vanityUrl?: Maybe<VanityUrl>;
   vanityUrlCollection?: Maybe<VanityUrlCollection>;
+};
+
+
+export type Query_NodeArgs = {
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+export type Query_NodesArgs = {
+  ids: Array<Scalars['ID']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
 };
 
 
@@ -1171,8 +1270,9 @@ export type QueryVanityUrlCollectionArgs = {
 };
 
 /** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/settings) */
-export type Settings = Entry & {
+export type Settings = Entry & _Node & {
   __typename?: 'Settings';
+  _id: Scalars['ID'];
   companyEmail?: Maybe<Scalars['String']>;
   companyName?: Maybe<Scalars['String']>;
   companyPhone?: Maybe<Scalars['String']>;
@@ -1229,8 +1329,10 @@ export type SettingsLinkedFromArgs = {
 export type SettingsNavigationCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<SettingsNavigationCollectionOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<PageFilter>;
 };
 
 
@@ -1238,8 +1340,10 @@ export type SettingsNavigationCollectionArgs = {
 export type SettingsSidebarCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<SettingsSidebarCollectionOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<SidebarItemFilter>;
 };
 
 
@@ -1318,6 +1422,37 @@ export type SettingsNavigationCollection = {
   total: Scalars['Int'];
 };
 
+export enum SettingsNavigationCollectionOrder {
+  DisableGradientAsc = 'disableGradient_ASC',
+  DisableGradientDesc = 'disableGradient_DESC',
+  HideTitleAsc = 'hideTitle_ASC',
+  HideTitleDesc = 'hideTitle_DESC',
+  IconAsc = 'icon_ASC',
+  IconDesc = 'icon_DESC',
+  NavigationTitleAsc = 'navigationTitle_ASC',
+  NavigationTitleDesc = 'navigationTitle_DESC',
+  OverlayLogoAsc = 'overlayLogo_ASC',
+  OverlayLogoDesc = 'overlayLogo_DESC',
+  SidebarAppendAsc = 'sidebarAppend_ASC',
+  SidebarAppendDesc = 'sidebarAppend_DESC',
+  SidebarReplaceAsc = 'sidebarReplace_ASC',
+  SidebarReplaceDesc = 'sidebarReplace_DESC',
+  SlugAsc = 'slug_ASC',
+  SlugDesc = 'slug_DESC',
+  SubtitleAsc = 'subtitle_ASC',
+  SubtitleDesc = 'subtitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 export enum SettingsOrder {
   CompanyEmailAsc = 'companyEmail_ASC',
   CompanyEmailDesc = 'companyEmail_DESC',
@@ -1345,9 +1480,29 @@ export type SettingsSidebarCollection = {
   total: Scalars['Int'];
 };
 
+export enum SettingsSidebarCollectionOrder {
+  ButtonLinkAsc = 'buttonLink_ASC',
+  ButtonLinkDesc = 'buttonLink_DESC',
+  ButtonTextAsc = 'buttonText_ASC',
+  ButtonTextDesc = 'buttonText_DESC',
+  ComponentAsc = 'component_ASC',
+  ComponentDesc = 'component_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 /** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/sidebarItem) */
-export type SidebarItem = Entry & {
+export type SidebarItem = Entry & _Node & {
   __typename?: 'SidebarItem';
+  _id: Scalars['ID'];
   body?: Maybe<Scalars['String']>;
   buttonLink?: Maybe<Scalars['String']>;
   buttonText?: Maybe<Scalars['String']>;
@@ -1480,6 +1635,7 @@ export type SidebarItemLinkingCollectionsEntryCollectionArgs = {
 export type SidebarItemLinkingCollectionsPageCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<SidebarItemLinkingCollectionsPageCollectionOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
@@ -1488,9 +1644,60 @@ export type SidebarItemLinkingCollectionsPageCollectionArgs = {
 export type SidebarItemLinkingCollectionsSettingsCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<SidebarItemLinkingCollectionsSettingsCollectionOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
+
+export enum SidebarItemLinkingCollectionsPageCollectionOrder {
+  DisableGradientAsc = 'disableGradient_ASC',
+  DisableGradientDesc = 'disableGradient_DESC',
+  HideTitleAsc = 'hideTitle_ASC',
+  HideTitleDesc = 'hideTitle_DESC',
+  IconAsc = 'icon_ASC',
+  IconDesc = 'icon_DESC',
+  NavigationTitleAsc = 'navigationTitle_ASC',
+  NavigationTitleDesc = 'navigationTitle_DESC',
+  OverlayLogoAsc = 'overlayLogo_ASC',
+  OverlayLogoDesc = 'overlayLogo_DESC',
+  SidebarAppendAsc = 'sidebarAppend_ASC',
+  SidebarAppendDesc = 'sidebarAppend_DESC',
+  SidebarReplaceAsc = 'sidebarReplace_ASC',
+  SidebarReplaceDesc = 'sidebarReplace_DESC',
+  SlugAsc = 'slug_ASC',
+  SlugDesc = 'slug_DESC',
+  SubtitleAsc = 'subtitle_ASC',
+  SubtitleDesc = 'subtitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export enum SidebarItemLinkingCollectionsSettingsCollectionOrder {
+  CompanyEmailAsc = 'companyEmail_ASC',
+  CompanyEmailDesc = 'companyEmail_DESC',
+  CompanyNameAsc = 'companyName_ASC',
+  CompanyNameDesc = 'companyName_DESC',
+  CompanyPhoneAsc = 'companyPhone_ASC',
+  CompanyPhoneDesc = 'companyPhone_DESC',
+  SiteTitleAsc = 'siteTitle_ASC',
+  SiteTitleDesc = 'siteTitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 export enum SidebarItemOrder {
   ButtonLinkAsc = 'buttonLink_ASC',
@@ -1516,6 +1723,8 @@ export type Sys = {
   environmentId: Scalars['String'];
   firstPublishedAt?: Maybe<Scalars['DateTime']>;
   id: Scalars['String'];
+  /** The locale that was requested. */
+  locale?: Maybe<Scalars['String']>;
   publishedAt?: Maybe<Scalars['DateTime']>;
   publishedVersion?: Maybe<Scalars['Int']>;
   spaceId: Scalars['String'];
@@ -1558,9 +1767,19 @@ export type SysFilter = {
   publishedVersion_not_in?: InputMaybe<Array<InputMaybe<Scalars['Float']>>>;
 };
 
+/**
+ * Represents a taxonomy concept entity for finding and organizing content easily.
+ *         Find out more here: https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-concepts
+ */
+export type TaxonomyConcept = {
+  __typename?: 'TaxonomyConcept';
+  id?: Maybe<Scalars['String']>;
+};
+
 /** [See type definition](https://app.contentful.com/spaces/akm0kyo1pd0w/content_types/vanityUrl) */
-export type VanityUrl = Entry & {
+export type VanityUrl = Entry & _Node & {
   __typename?: 'VanityUrl';
+  _id: Scalars['ID'];
   contentfulMetadata: ContentfulMetadata;
   linkedFrom?: Maybe<VanityUrlLinkingCollections>;
   source?: Maybe<Scalars['String']>;
@@ -1658,6 +1877,10 @@ export enum VanityUrlOrder {
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC'
 }
+
+export type _Node = {
+  _id: Scalars['ID'];
+};
 
 export type CfDestinationNestedFilter = {
   AND?: InputMaybe<Array<InputMaybe<CfDestinationNestedFilter>>>;

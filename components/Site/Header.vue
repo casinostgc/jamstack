@@ -1,24 +1,24 @@
 <script setup lang="ts">
-import { useDisplay } from 'vuetify/lib/framework.mjs'
+import { useDisplay } from "vuetify/lib/framework.mjs";
 
-const { settings } = useSiteSettings()
+const { settings } = useSiteSettings();
 
-const pages = computed(() => settings.navigationCollection?.items)
+const pages = computed(() => settings.value?.navigationCollection?.items);
 
-const isMobile = computed(() => useDisplay().mobile.value)
-const drawer = ref(!isMobile.value)
+const isMobile = computed(() => useDisplay().mobile.value);
+const drawer = ref(!isMobile.value);
 </script>
 
 <template>
   <v-app-bar>
     <a href="/" class="text-decoration-none text-black mx-4">
-      <span v-html="settings.siteTitle"></span>
+      <span v-html="settings?.siteTitle"></span>
     </a>
 
     <v-spacer />
 
     <v-btn
-      v-if="settings.companyPhone"
+      v-if="settings?.companyPhone"
       color="purple"
       variant="elevated"
       rounded

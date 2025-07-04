@@ -1,35 +1,33 @@
 <script setup lang="ts">
-import axios from 'axios'
-
 const props = withDefaults(
   defineProps<{
-    interest: string
-    buttonSize?: string | number
+    interest: string;
+    buttonSize?: string | number;
   }>(),
   {
-    buttonSize: 'default',
+    buttonSize: "default",
   }
-)
+);
 
-const dialog = ref(false)
-const formel = ref<HTMLFormElement>()
-const formData = ref<FormData>()
-const completed = ref(false)
+const dialog = ref(false);
+const formel = ref<HTMLFormElement>();
+const formData = ref<FormData>();
+const completed = ref(false);
 
 const submit = async () => {
-  formData.value = new FormData(formel.value)
+  formData.value = new FormData(formel.value);
 
   try {
-    const { data } = await axios.post(
-      'https://crm.zoho.com/crm/WebToLeadForm',
-      formData.value
-    )
+    const data = await $fetch("https://crm.zoho.com/crm/WebToLeadForm", {
+      method: "POST",
+      body: formData.value,
+    });
 
-    completed.value = true
+    completed.value = true;
   } catch (error) {
-    alert('Something went wrong, try again later...')
+    alert("Something went wrong, try again later...");
   }
-}
+};
 </script>
 
 <template>

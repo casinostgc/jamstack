@@ -1,15 +1,14 @@
-import axios from 'axios'
-import csv from 'csvtojson'
-import gql from 'graphql-tag'
-import { DateTime } from 'luxon'
+import csv from "csvtojson";
+import gql from "graphql-tag";
+import { DateTime } from "luxon";
 
-const { ALGOLIA_ADMIN_KEY } = process.env
+const { ALGOLIA_ADMIN_KEY } = process.env;
 
 export default defineEventHandler(async (event) => {
   // guard
-  if (getHeader(event, 'authorization') !== `Bearer ${ALGOLIA_ADMIN_KEY}`) {
-    event.node.res.statusCode = 401
-    return { message: 'Invalid Alogolia Admin Key' }
+  if (getHeader(event, "authorization") !== `Bearer ${ALGOLIA_ADMIN_KEY}`) {
+    event.node.res.statusCode = 401;
+    return { message: "Invalid Alogolia Admin Key" };
   }
 
   // const reqBody = await readBody(event)
@@ -32,41 +31,41 @@ export default defineEventHandler(async (event) => {
     }
 
     ${CasinoFragment}
-  `
+  `;
 
   const { settingsCollection, casinoCollection } = await graphql({
     query,
-  })
+  });
 
-  const { data: csvData } = await axios.get(
+  const csvData = await $fetch<string>(
     settingsCollection?.items?.[0]?.flights?.url!
-  )
+  );
 
   const flights = await csv({
     //   noheader: true,
     //   output: 'csv',
-  }).fromString(csvData)
+  }).fromString(csvData);
 
   const altered = flights.map((x) => {
     const casino = casinoCollection?.items?.find(
       (c) => c?.airportCode === x.casinocode
-    )
+    );
 
     return {
       ...x,
-      _departingat: DateTime.fromFormat(x.departingat, 'yyyy-MM-dd').valueOf(),
-      _arrivingat: DateTime.fromFormat(x.arrivingat, 'yyyy-MM-dd').valueOf(),
+      _departingat: DateTime.fromFormat(x.departingat, "yyyy-MM-dd").valueOf(),
+      _arrivingat: DateTime.fromFormat(x.arrivingat, "yyyy-MM-dd").valueOf(),
       casino,
-    }
-  })
+    };
+  });
 
   // return altered
 
   const res = await algoliaClient
-    .initIndex('Flights')
+    .initIndex("Flights")
     .replaceAllObjects(altered, {
       autoGenerateObjectIDIfNotExist: true,
-    })
+    });
 
-  return res
-})
+  return res;
+});

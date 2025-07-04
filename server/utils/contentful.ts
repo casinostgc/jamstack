@@ -1,14 +1,12 @@
-import axios from 'axios'
-
 const {
   CONTENTFUL_SPACE_ID,
   CONTENTFUL_ENVIRONMENT,
   CONTENTFUL_MANAGEMENT_TOKEN,
-} = process.env
+} = process.env;
 
-export const contentfulRestClient = axios.create({
+export const contentfulRestClient = $fetch.create({
   baseURL: `https://api.contentful.com/spaces/${CONTENTFUL_SPACE_ID}/environments/${CONTENTFUL_ENVIRONMENT}`,
   headers: {
     Authorization: `Bearer ${CONTENTFUL_MANAGEMENT_TOKEN}`,
   },
-})
+});
