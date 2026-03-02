@@ -1,20 +1,14 @@
-import { defineNuxtPlugin } from '#app'
-import VueGtag from 'vue-gtag'
-import type { RouteLocationNormalized } from 'vue-router'
+import { createGtag } from "vue-gtag";
 
 export default defineNuxtPlugin((nuxtApp) => {
-  if (import.meta.env.DEV) return
+  if (import.meta.env.DEV) return;
 
-  nuxtApp.vueApp.use(
-    VueGtag,
-    {
-      config: { id: 'G-2MVYJ1F7GN' },
-      // @ts-ignore
-      pageTrackerTemplate: (to: RouteLocationNormalized) => ({
-        page_title: to.path,
-        page_path: to.fullPath,
-      }),
+  const gtag = createGtag({
+    tagId: "G-2MVYJ1F7GN",
+    config: {
+      send_page_view: true,
     },
-    nuxtApp.$router
-  )
-})
+  });
+
+  nuxtApp.vueApp.use(gtag);
+});
