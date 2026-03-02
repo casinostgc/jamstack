@@ -1,27 +1,28 @@
 <script setup lang="ts">
-import { Page } from '~~/types/contentful'
+import type { Page } from "~~/types/contentful";
 import {
   AisConfigure,
   AisSearchBox,
   AisHits,
   AisStats,
-} from 'vue-instantsearch/vue3/es/index.js'
-import { DateTime } from 'luxon'
+} from "vue-instantsearch/vue3/es/index.js";
+import { DateTime } from "luxon";
 
-const page = inject<Ref<Page>>('page')
+const page = inject<Ref<Page>>("page");
 
 const props = defineProps<{
-  cardHeader?: boolean
-  cardActions?: boolean
-  filters?: string[]
-}>()
+  cardHeader?: boolean;
+  cardActions?: boolean;
+  filters?: string[];
+}>();
 
-const configure = ref({
+const configure = computed(() => ({
   filters: [
-    `_embarkation_date > ${new Date().valueOf()}`,
+    //
+    `_embarkation_date: > ${new Date().valueOf()}`,
     ...(props.filters ?? []),
-  ].join(' AND '),
-})
+  ].join(" AND "),
+}));
 </script>
 
 <template>
@@ -82,7 +83,8 @@ const configure = ref({
               {{ item.ship.toLowerCase() }}
             </v-list-item-subtitle>
 
-            <template #append v-if="$zoho">
+            <template #append v-if="false">
+              <!-- crm? -->
               <ZohoLeadsForm
                 @click="sendEvent('click', item, 'Interested')"
                 button-size="small"

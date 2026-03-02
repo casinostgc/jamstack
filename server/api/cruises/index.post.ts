@@ -1,62 +1,31 @@
-import axios from 'axios'
-import csv from 'csvtojson'
-import gql from 'graphql-tag'
-import { DateTime } from 'luxon'
+import { type CollectionCreateSchema } from "typesense";
 
-const { ALGOLIA_ADMIN_KEY } = process.env
+const cruisesSchema: CollectionCreateSchema = {
+  name: "cruises",
+  fields: [
+    { name: "cruise_line", type: "string", facet: true },
+    { name: "ship", type: "string", facet: true },
+    { name: "departure_port", type: "string", facet: true },
+    { name: "arrival_port", type: "string" },
+    { name: "embarkation_date", type: "auto" },
+    { name: "_embarkation_date", type: "int64" },
+    { name: "description", type: "string" },
+    { name: "round_trip", type: "bool" },
+  ],
+};
 
 export default defineEventHandler(async (event) => {
-  // guard
-  if (getHeader(event, 'authorization') !== `Bearer ${ALGOLIA_ADMIN_KEY}`) {
-    event.node.res.statusCode = 401
-    return { message: 'Invalid Alogolia Admin Key' }
-  }
+  const client = useTypesenseAdminClient(event);
 
-  // const reqBody = await readBody(event)
+  const exists = await client.collections("cruises").exists();
+  if (exists) await client.collections("cruises").delete();
+  await client.collections().create(cruisesSchema);
 
-  const query = gql`
-    query {
-      settingsCollection(limit: 1, order: sys_publishedAt_DESC) {
-        items {
-          cruises {
-            url
-          }
-        }
-      }
-    }
-  `
+  const cruises = await $fetch(`/api/cruises`, {
+    query: {
+      force: 1,
+    },
+  });
 
-  const { settingsCollection } = await graphql({
-    query,
-  })
-
-  const { data: csvData } = await axios.get(
-    settingsCollection?.items?.[0]?.cruises?.url!
-  )
-
-  const cruises = await csv({
-    //   noheader: true,
-    //   output: 'csv',
-  }).fromString(csvData)
-
-  const altered = cruises.map((x) => {
-    return {
-      ...x,
-      _embarkation_date: DateTime.fromFormat(
-        x.embarkation_date,
-        'yyyy-MM-dd'
-      ).valueOf(),
-      round_trip: x.arrival_port !== x.departure_port,
-    }
-  })
-
-  //   return altered
-
-  const res = await algoliaClient
-    .initIndex('Cruises')
-    .replaceAllObjects(altered, {
-      autoGenerateObjectIDIfNotExist: true,
-    })
-
-  return res
-})
+  return await client.collections("cruises").documents().import(cruises);
+});

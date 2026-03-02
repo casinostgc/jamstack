@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { SidebarItem } from '~~/types/contentful'
-defineProps<{ item: SidebarItem }>()
+import type { SidebarItem } from "~~/types/contentful";
+defineProps<{ item: SidebarItem }>();
 </script>
 
 <template>
