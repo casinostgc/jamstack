@@ -1,8 +1,8 @@
 // import 'vuetify/styles' // Global CSS has to be imported
-import '@mdi/font/css/materialdesignicons.css'
-import { createVuetify, ThemeDefinition } from 'vuetify'
-import * as components from 'vuetify/components'
-import * as directives from 'vuetify/directives'
+import "@mdi/font/css/materialdesignicons.css";
+import { createVuetify, type ThemeDefinition } from "vuetify";
+import * as components from "vuetify/components";
+import * as directives from "vuetify/directives";
 
 const lightTheme: ThemeDefinition = {
   dark: false,
@@ -13,20 +13,20 @@ const lightTheme: ThemeDefinition = {
     // accent: '#F36A58',
     // dark: '#424242',
   },
-}
+};
 
 const vuetify = createVuetify({
   components,
   directives,
   theme: {
-    defaultTheme: 'lightTheme',
+    defaultTheme: "lightTheme",
 
     themes: {
       lightTheme,
     },
   },
-})
+});
 
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.use(vuetify)
-})
+  nuxtApp.vueApp.use(vuetify);
+});
