@@ -1,4 +1,4 @@
-import type { SidebarItem } from "~~/types/contentful";
+import type { SidebarItem } from "~~/shared/types/contentful";
 
 const sidebarItems = ref<SidebarItem[]>([]);
 const sidebarReplace = ref<boolean>(false);

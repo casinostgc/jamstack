@@ -1,5 +1,5 @@
 import { DocumentNode, print } from "graphql";
-import type { Query } from "~~/types/contentful";
+import type { Query } from "~~/shared/types/contentful";
 import { $fetch } from "ofetch";
 
 export const graphql = async (options: {

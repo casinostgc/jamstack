@@ -1,4 +1,4 @@
-import type { Settings } from "~~/types/contentful";
+import type { Settings } from "~~/shared/types/contentful";
 
 const settings = reactive<Partial<Settings>>({});
 

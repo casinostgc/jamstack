@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Casino, Page } from "~~/types/contentful";
+import type { Casino, Page } from "~~/shared/types/contentful";
 
 const page = inject<Ref<Page>>("page");
 

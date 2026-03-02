@@ -1,5 +1,5 @@
 import { gql } from "graphql-tag";
-import type { Casino, Maybe } from "~~/types/contentful";
+import type { Casino, Maybe } from "~~/shared/types/contentful";
 
 export default defineEventHandler(async (event) => {
   const { slug } = getQuery(event);

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { NewsArticle, Page } from "~~/types/contentful";
+import type { NewsArticle, Page } from "~~/shared/types/contentful";
 
 const page = inject<Ref<Page>>("page");
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Page } from "~~/types/contentful";
+import type { Page } from "~~/shared/types/contentful";
 import {
   AisConfigure,
   AisSearchBox,
@@ -19,14 +19,10 @@ const props = defineProps<{
 const configure = computed(() => ({
   filters: [
     //
-    `_departingat: > ${Date.now()}`,
+    `_embarkation_date: > ${new Date().valueOf()}`,
     ...(props.filters ?? []),
   ].join(" AND "),
 }));
-
-const formatDate = (date: string) => {
-  return DateTime.fromISO(date).toJSDate().toLocaleDateString();
-};
 </script>
 
 <template>
@@ -40,7 +36,7 @@ const formatDate = (date: string) => {
             <template v-slot="{ currentRefinement, isSearchStalled, refine }">
               <v-text-field
                 xtype="search"
-                placeholder="Search Flights"
+                placeholder="Search Cruises"
                 :value="currentRefinement"
                 @update:model-value="refine($event)"
                 hide-details
@@ -62,25 +58,29 @@ const formatDate = (date: string) => {
         <template v-for="(item, i) in items">
           <v-divider inset v-if="i !== 0"></v-divider>
 
-          <v-list-item lines="three" :href="item.casino.slug">
+          <v-list-item lines="three">
             <template #prepend>
-              <v-avatar color="pink-lighten-2">
+              <v-avatar color="blue-lighten-1">
                 <v-icon>{{ page?.icon }}</v-icon>
               </v-avatar>
             </template>
 
             <v-list-item-subtitle class="text-overline">
-              {{ item.casino.destination.title }}
+              {{
+                DateTime.fromISO(item.embarkation_date)
+                  .toJSDate()
+                  .toLocaleDateString()
+              }}
+              {{ item.departure_port }}
             </v-list-item-subtitle>
 
             <v-list-item-title class="text-capitalize">
-              {{ (item.casino.title ?? item.gamingresort).toLowerCase() }}
+              {{ item.description.toLowerCase() }}
             </v-list-item-title>
 
-            <v-list-item-subtitle class="">
-              Departs {{ formatDate(item.departingat) }} from
-              <strong>{{ item.departingairport }}</strong
-              >, Returns {{ formatDate(item.arrivingat) }}
+            <v-list-item-subtitle class="text-capitalize">
+              {{ item.cruise_line.toLowerCase() }} -
+              {{ item.ship.toLowerCase() }}
             </v-list-item-subtitle>
 
             <template #append v-if="false">

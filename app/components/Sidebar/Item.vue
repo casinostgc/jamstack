@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { SidebarItem } from "~~/types/contentful";
+import type { SidebarItem } from "~~/shared/types/contentful";
 defineProps<{ item: SidebarItem }>();
 </script>
 
