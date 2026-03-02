@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Page } from "~~/types/contentful";
+import type { Page } from "~~/types/contentful";
 import {
   AisConfigure,
   AisSearchBox,
@@ -16,12 +16,13 @@ const props = defineProps<{
   filters?: string[];
 }>();
 
-const configure = ref({
+const configure = computed(() => ({
   filters: [
-    `_departingat > ${new Date().valueOf()}`,
+    //
+    `_departingat: > ${Date.now()}`,
     ...(props.filters ?? []),
   ].join(" AND "),
-});
+}));
 
 const formatDate = (date: string) => {
   return DateTime.fromISO(date).toJSDate().toLocaleDateString();
@@ -82,7 +83,8 @@ const formatDate = (date: string) => {
               >, Returns {{ formatDate(item.arrivingat) }}
             </v-list-item-subtitle>
 
-            <template #append v-if="$zoho">
+            <template #append v-if="false">
+              <!-- crm? -->
               <ZohoLeadsForm
                 @click="sendEvent('click', item, 'Interested')"
                 button-size="small"

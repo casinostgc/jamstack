@@ -4,21 +4,21 @@
   <v-card flat>
     <SearchRefinementList
       label="Resort"
-      attribute="casino.title"
+      attribute="casino_name"
       show-more
       :show-more-limit="100"
       searchable
     />
     <SearchRefinementList
       label="Destination"
-      attribute="casino.destination.title"
+      attribute="destination_name"
       show-more
       :show-more-limit="100"
       searchable
     />
     <SearchRefinementList
       label="Departing Airport"
-      attribute="departingairport"
+      attribute="airport_name"
       :limit="7"
       show-more
       :show-more-limit="100"

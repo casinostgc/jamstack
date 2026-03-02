@@ -1,72 +1,36 @@
-import axios from 'axios'
-import csv from 'csvtojson'
-import gql from 'graphql-tag'
-import { DateTime } from 'luxon'
+import { type CollectionCreateSchema } from "typesense";
 
-const { ALGOLIA_ADMIN_KEY } = process.env
+const flightsSchema: CollectionCreateSchema = {
+  name: "flights",
+  fields: [
+    { name: "gamingresort", type: "string" },
+    { name: "casinocode", type: "string", facet: true },
+    { name: "departingat", type: "auto" },
+    { name: "arrivingat", type: "auto" },
+    { name: "_departingat", type: "int64" },
+    { name: "_arrivingat", type: "int64" },
+    { name: "departingairport", type: "string", facet: true },
+    { name: "casino_name", type: "string", facet: true },
+    { name: "destination_name", type: "string", facet: true },
+    { name: "airport_name", type: "string", facet: true },
+    { name: "casino", type: "auto" },
+    { name: "airport", type: "auto", optional: true },
+    { name: "_geoloc", type: "geopoint", optional: true },
+  ],
+};
 
 export default defineEventHandler(async (event) => {
-  // guard
-  if (getHeader(event, 'authorization') !== `Bearer ${ALGOLIA_ADMIN_KEY}`) {
-    event.node.res.statusCode = 401
-    return { message: 'Invalid Alogolia Admin Key' }
-  }
+  const client = useTypesenseAdminClient(event);
 
-  // const reqBody = await readBody(event)
+  const exists = await client.collections("flights").exists();
+  if (exists) await client.collections("flights").delete();
+  await client.collections().create(flightsSchema);
 
-  const query = gql`
-    query {
-      settingsCollection(limit: 1, order: sys_publishedAt_DESC) {
-        items {
-          flights {
-            url
-          }
-        }
-      }
+  const flights = await $fetch(`/api/flights`, {
+    query: {
+      force: 1,
+    },
+  });
 
-      casinoCollection {
-        items {
-          ...CasinoFragment
-        }
-      }
-    }
-
-    ${CasinoFragment}
-  `
-
-  const { settingsCollection, casinoCollection } = await graphql({
-    query,
-  })
-
-  const { data: csvData } = await axios.get(
-    settingsCollection?.items?.[0]?.flights?.url!
-  )
-
-  const flights = await csv({
-    //   noheader: true,
-    //   output: 'csv',
-  }).fromString(csvData)
-
-  const altered = flights.map((x) => {
-    const casino = casinoCollection?.items?.find(
-      (c) => c?.airportCode === x.casinocode
-    )
-
-    return {
-      ...x,
-      _departingat: DateTime.fromFormat(x.departingat, 'yyyy-MM-dd').valueOf(),
-      _arrivingat: DateTime.fromFormat(x.arrivingat, 'yyyy-MM-dd').valueOf(),
-      casino,
-    }
-  })
-
-  // return altered
-
-  const res = await algoliaClient
-    .initIndex('Flights')
-    .replaceAllObjects(altered, {
-      autoGenerateObjectIDIfNotExist: true,
-    })
-
-  return res
-})
+  return await client.collections("flights").documents().import(flights);
+});
