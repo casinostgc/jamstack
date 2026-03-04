@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { AisPagination } from 'vue-instantsearch/vue3/es/index.js'
+import { AisPagination } from "vue-instantsearch/vue3/es/index.js";
 
-const page = ref(1)
+const page = ref(1);
 </script>
 
 <template>

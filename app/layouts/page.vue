@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Page } from "~~/types/contentful";
+import type { Page } from "~~/shared/types/contentful";
 
 const { path, matched } = useRoute();
 const matchedPath = matched?.[0]?.path;

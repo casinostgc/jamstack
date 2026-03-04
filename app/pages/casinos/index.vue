@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import { Casino, Page } from '~~/types/contentful'
+import type { Casino, Page } from "~~/shared/types/contentful";
 
-const page = inject<Ref<Page>>('page')
+const page = inject<Ref<Page>>("page");
 
-const route = useRoute()
+const route = useRoute();
 
 const { data } = await useFetch<{
-  total: number
-  items: Casino[]
-}>(`/api/casinos?page=${route.query.page}`)
+  total: number;
+  items: Casino[];
+}>(`/api/casinos?page=${route.query.page}`);
 
 if (!data) {
   throw createError({
     //
-  })
+  });
 }
 
-const casinos = computed(() => data.value?.items ?? [])
+const casinos = computed(() => data.value?.items ?? []);
 
 useBreadcrumbs([
   {
@@ -24,7 +24,7 @@ useBreadcrumbs([
     href: page?.value.slug!,
     disabled: true,
   },
-])
+]);
 </script>
 
 <template>

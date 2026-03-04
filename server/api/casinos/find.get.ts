@@ -1,8 +1,8 @@
-import { gql } from 'graphql-tag'
-import { Casino, Maybe } from '~~/types/contentful'
+import { gql } from "graphql-tag";
+import type { Casino, Maybe } from "~~/shared/types/contentful";
 
 export default defineEventHandler(async (event) => {
-  const { slug } = getQuery(event)
+  const { slug } = getQuery(event);
 
   const query = gql`
     query CasinoBySlug($slug: String!) {
@@ -21,25 +21,25 @@ export default defineEventHandler(async (event) => {
     }
 
     ${CasinoFragment}
-  `
+  `;
 
   const { casinoCollection } = await graphql({
     query,
     variables: {
       slug,
     },
-  })
+  });
 
-  const [casino] = casinoCollection?.items ?? []
+  const [casino] = casinoCollection?.items ?? [];
 
   return {
     casino,
     related: await getRelated(casino),
-  }
-})
+  };
+});
 
-async function getRelated(casino: Maybe<Casino>) {
-  if (!casino || !casino?.destination?.sys.id) return []
+async function getRelated(casino: Maybe<Casino> | undefined) {
+  if (!casino || !casino?.destination?.sys.id) return [];
 
   const query = gql`
     query RelatedCasinos($casinoId: String!, $destinationId: String!) {
@@ -57,7 +57,7 @@ async function getRelated(casino: Maybe<Casino>) {
     }
 
     ${CasinoFragment}
-  `
+  `;
 
   const { casinoCollection } = await graphql({
     query,
@@ -65,7 +65,7 @@ async function getRelated(casino: Maybe<Casino>) {
       casinoId: casino.sys.id,
       destinationId: casino.destination.sys.id,
     },
-  })
+  });
 
-  return casinoCollection?.items ?? []
+  return casinoCollection?.items ?? [];
 }
