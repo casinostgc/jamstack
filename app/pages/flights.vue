@@ -4,9 +4,9 @@ import { useGeolocation } from "@vueuse/core";
 
 const { activeIndex, routing } = useAlgoliaIndex("flights");
 
-const location = computed<string | undefined>(() => {
-  const { coords, error } = useGeolocation();
+const { coords, error } = useGeolocation();
 
+const location = computed<string | undefined>(() => {
   if (error.value) return undefined;
 
   // const latitude = 27.948199;
@@ -21,13 +21,23 @@ const location = computed<string | undefined>(() => {
   return `_geoloc(${latitude}, ${longitude}):asc`;
 });
 
-const { searchClient } = useSearchClient({
-  // https://typesense.org/docs/30.1/api/search.html#filter-parameters
-  additionalSearchParameters: {
-    query_by: "*",
-    sort_by: [location.value, `_departingat:asc`].filter(Boolean).join(","),
-  },
-  geoLocationField: "_geoloc",
+const { searchClient, params, instantSearchRef } = useTypesenseInstance();
+
+watchEffect(() => {
+  params.value = {
+    // https://typesense.org/docs/30.1/api/search.html#filter-parameters
+    additionalSearchParameters: {
+      query_by: "*",
+      sort_by: [
+        //
+        location.value,
+        `_departingat:asc`,
+      ]
+        .filter(Boolean)
+        .join(","),
+    },
+    geoLocationField: "_geoloc",
+  };
 });
 </script>
 
@@ -36,6 +46,7 @@ const { searchClient } = useSearchClient({
     :index-name="activeIndex"
     :search-client="searchClient"
     :routing="routing"
+    ref="instantSearchRef"
   >
     <NuxtLayout name="page">
       <!-- <NuxtPage /> -->

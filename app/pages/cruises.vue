@@ -3,7 +3,7 @@ import { AisInstantSearch } from "vue-instantsearch/vue3/es/index.js";
 
 const { activeIndex, routing } = useAlgoliaIndex("cruises");
 
-const { searchClient } = useSearchClient({
+const { searchClient } = useTypesenseInstance({
   // https://typesense.org/docs/30.1/api/search.html#filter-parameters
   additionalSearchParameters: {
     query_by: "*",
